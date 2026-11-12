@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "_readme": "每日自动收集配置。修改后推送到 main 即生效；GitHub Actions 每天北京时间 03:00 运行。",
+  "version": 2,
+  "_readme": "每日自动收集配置（B 全量模式：4 个上游仓库合并检测）。修改后推送到 main 即生效；GitHub Actions 每天北京时间 03:00 运行。",
 
   "upstreams": [
     {
@@ -8,21 +8,39 @@
       "branch": "main",
       "jsPath": "js",
       "subsPath": "subs",
-      "enabled": true
+      "enabled": true,
+      "_note": "自有 fork，优先级最高（同名文件以它为准）"
     },
     {
       "repo": "https://github.com/Yswag/xptv-extensions.git",
       "branch": "main",
       "jsPath": "js",
       "subsPath": "subs",
-      "enabled": false,
-      "_note": "上游原仓库。如需同时收集，把 enabled 改成 true 并在 workflow 里增加一次 clone（见 README 自动化章节）"
+      "enabled": true,
+      "_note": "上游原仓库，与自有 fork 大部分重名，主要提供新增/更新的脚本"
+    },
+    {
+      "repo": "https://github.com/fangkuia/XPTV.git",
+      "branch": "main",
+      "jsPath": "js",
+      "subsPath": ".",
+      "enabled": true,
+      "_note": "活跃扩展仓（VOD/PAN/CMS 订阅在根目录 all.json 与子目录）"
+    },
+    {
+      "repo": "https://github.com/kingreevice/my_xptv.git",
+      "branch": "main",
+      "jsPath": "js",
+      "subsPath": "subs",
+      "enabled": true,
+      "_note": "补充扩展仓"
     }
   ],
+  "_merge_note": "合并顺序 = upstreams 顺序；同名 js 先到先得，最后再被 pinned 里的本地修复版覆盖。文件名只允许 [A-Za-z0-9_.-].js，带空格/括号/中文的脚本自动跳过（raw URL 无法匿名引用）。",
 
   "rawBase": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main",
 
-  "_pinned_note": "本地修复版，自动收集时永不被上游同名文件覆盖",
+  "_pinned_note": "本地修复版，自动收集时永不被任何上游同名文件覆盖",
   "pinned": ["anime1", "wwgz", "4kav"],
 
   "_exclude_note": "永不自动纳入主订阅的源（脚本仍可留在 js/ 里手动启用）。exclude 只影响「新纳入」，不会删除已收录的源。",
@@ -35,7 +53,18 @@
     "alist_xiaoya",
     "nanfdj",
     "mihdr",
-    "yunpanres"
+    "yunpanres",
+    "labipan",
+    "leijing",
+    "ouge",
+    "yunpan8",
+    "xzys",
+    "seedhub",
+    "mucpan",
+    "jujiTV_pan",
+    "jujiTV-line-pan",
+    "GYING-line-pan",
+    "aowu_get_play_url"
   ],
   "excludeReason": {
     "hdmoli": "站点已转纯网盘下载站，无在线播放器",
@@ -46,14 +75,37 @@
     "alist_xiaoya": "需自备 AList 服务端地址",
     "nanfdj": "网盘源",
     "mihdr": "网盘源",
-    "yunpanres": "网盘源"
+    "yunpanres": "网盘源",
+    "labipan": "网盘源（PAN）",
+    "leijing": "网盘源（PAN）",
+    "ouge": "网盘源（PAN）",
+    "yunpan8": "网盘源（PAN）",
+    "xzys": "网盘源（PAN）",
+    "seedhub": "网盘/聚合源，不返回直播流",
+    "mucpan": "网盘源（PAN）",
+    "jujiTV_pan": "网盘源（PAN）",
+    "jujiTV-line-pan": "网盘源（PAN）",
+    "GYING-line-pan": "网盘源（PAN）",
+    "aowu_get_play_url": "解析工具脚本，不是独立站点源"
   },
+
+  "_blocklist_note": "B 模式新增：扩展仓库里明确的成人向源。列表层仍会检测（保留数据），但不做播放深检、永不自动纳入主订阅。",
+  "blocklist": [
+    "EXPORNTOONS", "KoreaPornMovie", "SpankBang", "SupJav", "beeg", "javmove", "javxx",
+    "kanav", "madoucun", "missav", "pomo", "pppPorn", "rou", "rousp", "taiav", "xpanpan",
+    "aomi", "mitaotun", "muou", "naixxzy", "taozi", "tgs_xp", "uua", "wogg", "xsjyy",
+    "jable", "hanime", "EXPORNTOONS", "hkdoll"
+  ],
 
   "_adult_note": "新源文件名命中这些关键词时不自动纳入（已收录的 avdb 不受影响）。家庭内容过滤用。",
   "adultKeywords": [
     "porn", "xhamster", "hanime", "hkdoll", "avtoday", "taohuazu", "hdys",
-    "kbjfan", "javdb",     "91jav", "91_vod", "ph_vod", "xh_vod", "gay", "madou"
+    "kbjfan", "javdb", "91jav", "91_vod", "ph_vod", "xh_vod", "gay", "madou",
+    "jav", "spank", "beeg", "hentai", "xxx", "sex", "pornmovie"
   ],
+
+  "_pan_note": "命中这些词的新源判定为网盘类，跳过播放深检（已收录源不受影响）。",
+  "panKeywords": ["line-pan", "_pan", "yunpan", "quark", "alist", "xiaoya", "labipan", "mucpan", "seedhub"],
 
   "thresholds": {
     "minHitsToAdd": 2,

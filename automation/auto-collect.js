@@ -47,13 +47,25 @@ function parseArgs(argv) {
     const key = k.slice(2)
     if (key === 'dry-run') { a['dry-run'] = true; continue }
     const v = argv[i + 1]
-    if (v && !v.startsWith('--')) { a[key] = v; i++ } else { a[key] = true }
+    if (v && !v.startsWith('--')) {
+      // 同一参数可重复传入，也支持逗号分隔（workflow 动态拼接多仓库）
+      const vals = String(v).split(',').map((s) => s.trim()).filter(Boolean)
+      a[key] = (a[key] || []).concat(vals)
+      i++
+    } else { a[key] = true }
   }
   return a
 }
 const ARGS = parseArgs(process.argv.slice(2))
 const DRY = !!ARGS['dry-run']
-const ROOT = path.resolve(ARGS.root || path.join(__dirname, '..'))
+/** 参数值统一成「存在的目录数组」：兼容重复参数 / 逗号分隔 / 单值 */
+const first = (v) => (Array.isArray(v) ? v[0] : v)
+const asDirs = (v) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : [])
+  .map((d) => path.resolve(String(d)))
+  .filter((d) => fs.existsSync(d))
+const ROOT = path.resolve((Array.isArray(ARGS.root) ? ARGS.root[0] : ARGS.root) || path.join(__dirname, '..'))
+const UPSTREAM_DIRS = asDirs(ARGS['upstream-dir'])
+const SUBS_DIRS = asDirs(ARGS['subs-dir'])
 const P = (...x) => path.join(ROOT, ...x)
 const DIR_JS = P('js')
 const DIR_SUBS = P('subs')
@@ -86,55 +98,77 @@ const today = () => new Intl.DateTimeFormat('en-CA', {
 function log(...a) { console.log(...a) }
 function extUrl(file) { return `${CFG.rawBase}/js/${file}` }
 
-/** 从上游 subs/*.json 反查 name / api 命名 */
-function loadUpstreamMeta(subsDir) {
+/** 从多个上游目录的订阅 json 反查 name / api 命名（先到先得） */
+function loadUpstreamMeta(subsDirs) {
   const out = {}
-  if (!subsDir || !fs.existsSync(subsDir)) return out
-  for (const f of fs.readdirSync(subsDir).filter((x) => x.endsWith('.json'))) {
-    const d = readJson(path.join(subsDir, f), null)
-    if (!d || !Array.isArray(d.sites)) continue
-    for (const s of d.sites) {
-      const key = keyOf(path.basename(String(s.ext || '')))
-      if (!key || out[key]) continue
-      out[key] = {
-        name: String(s.name || key).split('|')[0].trim() || key,
-        api: String(s.api || `csp_${key}`),
+  for (const base of subsDirs) {
+    const scan = [base]
+    for (const sub of ['subs', 'VOD', 'PAN', 'CMS', 'X', 'AList', 'dist']) {
+      const d = path.join(base, sub)
+      if (fs.existsSync(d) && fs.statSync(d).isDirectory()) scan.push(d)
+    }
+    for (const dir of scan) {
+      let files = []
+      try { files = fs.readdirSync(dir).filter((x) => x.endsWith('.json')) } catch (e) { continue }
+      for (const f of files) {
+        const d = readJson(path.join(dir, f), null)
+        if (!d || !Array.isArray(d.sites)) continue
+        for (const s of d.sites) {
+          const key = keyOf(path.basename(String(s.ext || '')))
+          if (!key || out[key]) continue
+          out[key] = {
+            name: String(s.name || key).split('|')[0].trim() || key,
+            api: String(s.api || `csp_${key}`),
+          }
+        }
       }
     }
   }
   return out
 }
 
-/** 组装「本次实际检测」的 js 目录：上游全量 + 项目独有 + 修复版优先 */
-function buildWorkDir() {
-  const upstream = ARGS['upstream-dir']
-  if (!upstream || !fs.existsSync(upstream)) {
-    throw new Error(`缺少 --upstream-dir 或目录不存在: ${upstream}`)
-  }
+/** 文件名必须能安全地拼进 raw URL；带空格/括号/中文的脚本直接跳过 */
+const SAFE_JS_NAME = /^[A-Za-z0-9_.-]+\.js$/
+
+/** 组装「本次实际检测」的 js 目录：多仓库按配置顺序合并 + 项目独有 + 修复版优先 */
+function buildWorkDir(dirs) {
+  if (!dirs.length) throw new Error('缺少 --upstream-dir（可重复传入多个仓库的 js/ 目录）')
   const work = fs.mkdtempSync(path.join(os.tmpdir(), 'xptv-auto-'))
   const jsDir = path.join(work, 'js')
   fs.mkdirSync(jsDir, { recursive: true })
-  let n = 0
-  for (const f of fs.readdirSync(upstream).filter((x) => x.endsWith('.js'))) {
-    fs.copyFileSync(path.join(upstream, f), path.join(jsDir, f)); n++
-  }
+  let duplicate = 0, skippedName = 0
+  dirs.forEach((upstream, idx) => {
+    let added = 0
+    for (const f of fs.readdirSync(upstream).filter((x) => x.endsWith('.js'))) {
+      if (!SAFE_JS_NAME.test(f)) { skippedName++; continue }
+      const dst = path.join(jsDir, f)
+      if (fs.existsSync(dst)) { duplicate++; continue }
+      fs.copyFileSync(path.join(upstream, f), dst)
+      added++
+    }
+    log(`  [上游 ${idx + 1}/${dirs.length}] ${path.basename(path.dirname(upstream))} → 新增 ${added} 个脚本`)
+  })
   // 项目独有（上游已删除的源）也纳入检测，避免已收录源被漏测
+  let own = 0
   for (const f of fs.readdirSync(DIR_JS).filter((x) => x.endsWith('.js'))) {
+    if (!SAFE_JS_NAME.test(f)) continue
     if (!fs.existsSync(path.join(jsDir, f))) {
-      fs.copyFileSync(path.join(DIR_JS, f), path.join(jsDir, f)); n++
+      fs.copyFileSync(path.join(DIR_JS, f), path.join(jsDir, f)); own++
     }
   }
-  // 本地修复版永不被上游覆盖
+  // 本地修复版永不被任何上游覆盖
   for (const key of (CFG.pinned || [])) {
     const src = path.join(DIR_JS, key + '.js')
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(jsDir, key + '.js'))
   }
-  return { work, jsDir, total: fs.readdirSync(jsDir).filter((x) => x.endsWith('.js')).length }
+  const total = fs.readdirSync(jsDir).filter((x) => x.endsWith('.js')).length
+  log(`  合并后 ${total} 个脚本（重名跳过 ${duplicate}，非法文件名跳过 ${skippedName}，项目独有补入 ${own}）`)
+  return { work, jsDir, total, repoCount: dirs.length }
 }
 
 /** 真实跑两个检测脚本，返回 {list, play} */
 function runDetection(jsDir, workDir, existingFiles) {
-  const tools = ARGS['tools-dir'] ? path.resolve(ARGS['tools-dir']) : P('tools')
+  const tools = asDirs(ARGS['tools-dir'])[0] || P('tools')
   for (const f of ['check.js', 'playcheck.js']) {
     if (!fs.existsSync(path.join(tools, f))) {
       throw new Error(`检测工具缺失: ${path.join(tools, f)}（用 --tools-dir 指定 tools/ 目录）`)
@@ -154,17 +188,29 @@ function runDetection(jsDir, workDir, existingFiles) {
   const listOk = list.filter((x) => x.status === 'ok').map((x) => keyOf(x.file))
   log(`      上游 ${list.length} 源 → 列表可用 ${listOk.length} 个`)
 
-  // 已收录的源即使这次列表失败也要跑播放深检（用于累计失败次数）
+  // B 模式：列表层跑全量，播放深检跳过明确成人/网盘源（已收录源必测，用于累计失败次数）
+  const BLOCK = new Set((CFG.blocklist || []).map((s) => String(s).toLowerCase()))
+  const ADULT = (CFG.adultKeywords || []).map((s) => String(s).toLowerCase()).filter(Boolean)
+  const PAN = (CFG.panKeywords || []).map((s) => String(s).toLowerCase()).filter(Boolean)
+  const includedSet = new Set(existingFiles)
+  const skipPlay = []
   const candidates = [...new Set([...listOk, ...existingFiles])]
     .filter((k) => fs.existsSync(path.join(jsDir, k + '.js')))
+    .filter((k) => {
+      if (includedSet.has(k)) return true
+      const low = k.toLowerCase()
+      const blocked = BLOCK.has(low) || ADULT.some((w) => low.includes(w)) || PAN.some((w) => low.includes(w))
+      if (blocked) { skipPlay.push(k); return false }
+      return true
+    })
     .sort()
-  log(`\n[2/2] 播放链路深检 playcheck.js  候选 ${candidates.length} 个`)
+  log(`\n[2/2] 播放链路深检 playcheck.js  候选 ${candidates.length} 个（成人/网盘过滤跳过 ${skipPlay.length} 个）`)
   r = spawnSync(process.execPath,
     [path.join(tools, 'playcheck.js'), jsDir, candidates.join(',')],
     { env: { ...env, PLAYCHECK_OUT: playOut }, stdio: 'inherit' })
   if (r.status !== 0) throw new Error(`playcheck.js 退出码 ${r.status}`)
   const play = readJson(playOut, [])
-  return { list, play, listOk, candidates }
+  return { list, play, listOk, candidates, skipPlay }
 }
 
 /** 根据现有 vod.json 初始化 / 校准状态 */
@@ -213,7 +259,7 @@ function autoBlock(state, finalKeys, info) {
     AUTO_BEGIN,
     '> 🤖 本节由 `automation/auto-collect.js` 自动生成，**请勿手工编辑**（每天北京时间 03:00 更新）。',
     '',
-    `**最近自动检测**：${info.time}（北京时间）${info.mode === 'offline' ? ' · 离线复算' : ''} · 上游 ${info.total} 源 → 列表可用 ${info.listOk} → 播放可播 ${info.playOk} → 主订阅 **${finalKeys.length} 源** · 本次新增：${add} · 移除：${rm}`,
+    `**最近自动检测**：${info.time}（北京时间）${info.mode === 'offline' ? ' · 离线复算' : ''} · ${info.repoCount ? `${info.repoCount} 个上游仓库 / ` : ''}上游 ${info.total} 源 → 列表可用 ${info.listOk} → 播放可播 ${info.playOk} → 主订阅 **${finalKeys.length} 源** · 本次新增：${add} · 移除：${rm}${info.skipPlayCount ? ` · 成人/网盘过滤 ${info.skipPlayCount} 个` : ''}`,
   ]
   if (warn) lines.push('', warn)
   lines.push(
@@ -248,25 +294,28 @@ async function main() {
 
   const existingSites = readJson(FILE_VOD, { sites: [] }).sites || []
   const existingKeys = existingSites.map((s) => keyOf(path.basename(s.ext)))
-  const meta = loadUpstreamMeta(ARGS['subs-dir'])
+  const meta = loadUpstreamMeta(SUBS_DIRS)
   const state = loadState(existingSites, meta)
 
   // ---- 检测结果 ----
-  let list = [], play = [], listOk = [], candidates = [], total = 0, jsDir = ARGS['upstream-dir']
+  let list = [], play = [], listOk = [], candidates = [], skipPlay = [], total = 0
+  let repoCount = UPSTREAM_DIRS.length, jsDir = UPSTREAM_DIRS[0]
   const offline = ARGS['from-list'] && ARGS['from-play']
   if (offline) {
-    list = readJson(path.resolve(ARGS['from-list']), [])
-    play = readJson(path.resolve(ARGS['from-play']), [])
+    list = readJson(path.resolve(first(ARGS['from-list'])), [])
+    play = readJson(path.resolve(first(ARGS['from-play'])), [])
     listOk = list.filter((x) => x.status === 'ok').map((x) => keyOf(x.file))
     candidates = [...new Set(play.map((x) => keyOf(x.file)))].sort()
     total = list.length
-    log(`离线模式：复用 ${path.basename(ARGS['from-list'])} / ${path.basename(ARGS['from-play'])}`)
+    repoCount = 0
+    log(`离线模式：复用 ${path.basename(first(ARGS['from-list']))} / ${path.basename(first(ARGS['from-play']))}`)
   } else {
-    const w = buildWorkDir()
+    const w = buildWorkDir(UPSTREAM_DIRS)
     jsDir = w.jsDir
     total = w.total
+    repoCount = w.repoCount
     const d = runDetection(w.jsDir, w.work, existingKeys)
-    ;({ list, play, listOk, candidates } = d)
+    ;({ list, play, listOk, candidates, skipPlay } = d)
     writeJson(P('docs', `result-${today()}-list.json`), list)
     writeJson(P('docs', `result-${today()}-play.json`), play)
   }
@@ -348,8 +397,9 @@ async function main() {
   // ---- 写文件 ----
   const info = {
     time, mode: offline ? 'offline' : 'live',
-    aborted, suspicious, total, listOk: listOk.length,
+    aborted, suspicious, total, repoCount, listOk: listOk.length,
     playOk: okKeys.length, candidates: candidates.length,
+    skipPlayCount: skipPlay.length,
     added, removed, skipped,
   }
   log(`\n=== 收敛结果 ===`)
@@ -378,8 +428,8 @@ async function main() {
     writeJson(FILE_LASTRUN, {
       runAt: new Date().toISOString(), beijingTime: time,
       mode: offline ? 'offline' : 'live',
-      upstreamTotal: total, listOk: listOk.length, playOk: okKeys.length,
-      candidates, included: finalKeys, added, removed, skipped,
+      upstreamTotal: total, upstreamRepos: repoCount, listOk: listOk.length, playOk: okKeys.length,
+      candidates, skippedPlay: skipPlay, included: finalKeys, added, removed, skipped,
       suspicious, aborted,
       okKeys, failedStages: Object.fromEntries(
         play.filter((r) => r.status !== 'ok').map((r) => [keyOf(r.file), `${r.stage}: ${r.detail}`.slice(0, 160)])),
@@ -396,8 +446,9 @@ async function main() {
     const md = [
       `## XPTV 每日自动收集 — ${time}`, '',
       `| 环节 | 数量 |`, `|---|---:|`,
-      `| 上游源 | ${total} |`, `| 列表可用 | ${listOk.length} |`,
-      `| 播放可播 | ${okKeys.length} |`, `| 主订阅 | ${finalKeys.length} |`, '',
+      `| 上游仓库 | ${repoCount} |`, `| 上游源 | ${total} |`, `| 列表可用 | ${listOk.length} |`,
+      `| 播放可播 | ${okKeys.length} |`, `| 主订阅 | ${finalKeys.length} |`,
+      `| 成人/网盘过滤 | ${skipPlay.length} |`, '',
       `- 新增：${added.join('、') || '无'}`, `- 移除：${removed.join('、') || '无'}`,
       aborted || suspicious ? `- ⚠️ 安全阀：${aborted ? '可播为 0，订阅未改动' : '可播骤降，只增不删'}` : '',
     ].filter(Boolean).join('\n') + '\n'

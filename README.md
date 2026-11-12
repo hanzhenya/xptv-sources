@@ -1,10 +1,12 @@
 # xptv-sources — 自建 XPTV 可播源（说明帮助文档）
 
-独立维护、**完全自控**的 XPTV 源项目：不依赖上游 `Yswag/xptv-extensions`，不会被同步覆盖，站点改版可以自己修。
+独立维护、**完全自控**的 XPTV 源项目：订阅、扩展脚本、过滤规则都放在自己的公开仓库里，站点改版可以自己修，不会被任何上游同步覆盖。
 
 > 📖 本页是完整说明帮助文档。**只想导入**看下面「一分钟上手」；**有海报但播不了**直接跳到 [常见问题与故障排查](#常见问题与故障排查)。
 >
-> **2026-11-12 第二次全量重检**：把上游仓库 `js/` 下 **72 个源**全部重跑一遍，并首次对所有候选源做了**播放链路深检**（取列表 → 取剧集 → 取播放地址 → 真实拉流）。主订阅已从原先的「8 个能出列表」收敛为 **10 个复验稳定可播**的源。详见 [检测报告](docs/播放链路检测报告.md)。
+> **2026-11-12 第二次全量重检**：把上游 72 个源全部重跑一遍，并首次对所有候选源做了**播放链路深检**（取列表 → 取剧集 → 取播放地址 → 真实拉流）。主订阅从原先的「8 个能出列表」收敛为 **10 个复验稳定可播**的源。详见 [检测报告](docs/播放链路检测报告.md)。
+>
+> **2026-11-12 起升级为 B 全量模式**：每日自动汇总 **4 个上游仓库、约 150 个去重脚本**，不再局限于那 72 个；列表层全量检测，播放深检按成人/网盘规则过滤后，再靠「连续 2 天可播」阈值收敛订阅。详见 [B 全量扩源模式](#b-全量扩源模式)。
 
 ## 一分钟上手
 
@@ -31,12 +33,13 @@
 
 ## 自动同步状态
 
-每天**北京时间凌晨 03:00**，GitHub Actions 会自动从上游 GitHub 仓库收集全部扩展源，跑「列表检测 → 播放深检」，把确认可播的源收敛进本项目并推送。详细机制见 [每日自动收集](#每日自动收集)。
+每天**北京时间凌晨 03:00**，GitHub Actions 会自动从 **4 个上游仓库**收集全部扩展源（约 150 个去重脚本），跑「列表检测 → 播放深检」，把确认可播的源收敛进本项目并推送。详细机制见 [每日自动收集](#每日自动收集)。
 
 **当前部署状态（2026-11-12）**
 
 | 项 | 状态 |
 |---|:---:|
+| 源范围：**B 全量模式**，4 个上游仓库 / 约 150 个去重脚本 | ✅ |
 | 工作流 `.github/workflows/daily-sync.yml` 已随本次推送上线 | ✅ |
 | 定时任务已注册（UTC 19:00 / 北京时间 03:00） | ✅ |
 | 本机无需开机、不依赖本机已失效的 API token | ✅ |
@@ -49,20 +52,20 @@
 <!-- AUTO:BEGIN -->
 > 🤖 本节由 `automation/auto-collect.js` 自动生成，**请勿手工编辑**（每天北京时间 03:00 更新）。
 
-**最近自动检测**：2026-11-12 13:53（北京时间） · 上游 72 源 → 列表可用 21 → 播放可播 13 → 主订阅 **10 源** · 本次新增：无 · 移除：无
+**最近自动检测**：2026-11-12 14:26（北京时间） · 4 个上游仓库 / 上游 149 源 → 列表可用 35 → 播放可播 12 → 主订阅 **10 源** · 本次新增：无 · 移除：无 · 成人/网盘过滤 10 个
 
 | 源名 | api | 流格式 | 列表条数 | 连续通过 | 状态 |
 |---|---|:---:|---:|:---:|:---:|
-| anime1 | `csp_anime1` | mp4 | 1964 | 4 天 | ✅ |
-| avdb | `csp_avdb` | m3u8 | 100 | 4 天 | ✅ |
-| PPnix | `csp_ppnix` | m3u8 | 24 | 4 天 | ✅ |
-| 农民影视 | `csp_wwgz` | m3u8 | 30 | 0 天 | ✅ |
-| 小蘋果 | `csp_apple` | m3u8 | 20 | 4 天 | ✅ |
-| 7sefun | `csp_7sefun` | mp4 | 20 | 4 天 | ✅ |
-| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 0 天 | ✅ |
-| rrmj | `csp_rrmj` | mp4 | 30 | 4 天 | ✅ |
-| huya | `csp_huya` | flv | 120 | 4 天 | ✅ |
-| 斗鱼 | `csp_douyu` | flv | 8 | 4 天 | ✅ |
+| anime1 | `csp_anime1` | mp4 | 1964 | 5 天 | ✅ |
+| avdb | `csp_avdb` | m3u8 | 100 | 5 天 | ✅ |
+| PPnix | `csp_ppnix` | m3u8 | 24 | 5 天 | ✅ |
+| 农民影视 | `csp_wwgz` | m3u8 | 30 | 1 天 | ✅ |
+| 小蘋果 | `csp_apple` | m3u8 | 20 | 5 天 | ✅ |
+| 7sefun | `csp_7sefun` | mp4 | 20 | 5 天 | ✅ |
+| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 1 天 | ✅ |
+| rrmj | `csp_rrmj` | mp4 | 30 | 5 天 | ✅ |
+| huya | `csp_huya` | flv | 120 | 0 天 | ✅ |
+| 斗鱼 | `csp_douyu` | flv | 8 | 5 天 | ✅ |
 
 > 详细归因见 `docs/last-run.json` 与 `docs/result-<日期>-play.json`；手动复测命令见下方「常用操作」。
 <!-- AUTO:END -->
@@ -105,6 +108,8 @@
 > 🔄 改完订阅后 XPTV 有缓存：在订阅配置里点「刷新 / 重新导入」，必要时删掉旧订阅再加一次。GitHub raw 也有 CDN 缓存，改动通常 1–5 分钟生效。
 
 ## 本次重检结论
+
+> 📌 这是升级 **B 全量模式之前**的基线（单一 fork 72 源），保留作为修复记录；扩展 4 仓库后的最新漏斗数字看页首 AUTO 区块与 `docs/last-run.json`。
 
 ```
 上游 72 个源
@@ -189,21 +194,21 @@ xptv-sources/
 ├── .github/workflows/
 │   └── daily-sync.yml               ★ 每日 03:00 定时任务
 ├── automation/
-│   ├── config.json                  ★ 上游、排除名单、修复版、收录阈值
+│   ├── config.json                  ★ 4 个上游仓库、过滤名单、修复版、收录阈值
 │   └── auto-collect.js              ★ 自动收集主程序
 ├── docs/
 │   ├── 播放链路检测报告.md            全量检测结论、归因、修复记录
 │   ├── state.json                   跨天累计命中/失败次数（自动维护）
 │   ├── last-run.json                最近一次运行摘要（自动维护）
-│   ├── result-2026-11-12-list.json  72 源列表检测原始数据
-│   └── result-2026-11-12-play.json  21 源播放深检原始数据
+│   ├── result-<日期>-list.json       当次全量列表检测原始数据（每日覆盖）
+│   └── result-<日期>-play.json       当次播放深检原始数据
 ├── subs/
 │   ├── vod.json                     ★ 主订阅：稳定可播（自动收敛）
 │   ├── playable.json                与 vod.json 相同，兼容旧链接
 │   └── legacy-8.json                最初的 8 源全量（回退用，不自动改）
 ├── js/                              扩展脚本（10 主订阅 + 备用/legacy，自动同步上游）
 └── tools/
-    ├── check.js                     列表可用性检测（72 源全量）
+    ├── check.js                     列表可用性检测（B 模式约 150 源全量）
     ├── playcheck.js                 ★ 播放链路深检（列表→剧集→地址→真实拉流）
     ├── package.json                 依赖：cheerio + crypto-js
     └── publish.sh                   一键提交推送
@@ -219,13 +224,56 @@ xptv-sources/
 | 触发方式 | 定时 / 网页手动 **Run workflow** / 改动 `automation/**` 时自动验证一次 |
 | 运行位置 | GitHub 云端 `ubuntu-latest`，**不依赖你的 Mac 开机** |
 | 推送凭据 | Actions 自带 `GITHUB_TOKEN`，绕开本机已失效的 API token |
+| 单次上限 | 60 分钟（源扩到约 150 个后相应放宽） |
+
+### B 全量扩源模式
+
+不再只看自有 fork 的那 72 个源。`automation/config.json` 的 `upstreams` 现在启用 4 个仓库：
+
+| # | 仓库 | js 数 | 作用 | 优先级 |
+|:--:|---|---:|---|:--:|
+| 1 | `hanzhenya/xptv-extensions` | 72 | 自有 fork，基线 | 最高 |
+| 2 | `Yswag/xptv-extensions` | 72 | 上游原仓库（与 fork 大多重名） | 2 |
+| 3 | `fangkuia/XPTV` | 48 | 活跃扩展仓，含 VOD / PAN / CMS | 3 |
+| 4 | `kingreevice/my_xptv` | 46 | 补充扩展仓 | 4 |
+
+四者按文件名去重后约 **150 个脚本**，相对旧的 72 源净新增约 **78 个**。
+
+| 规则 | 说明 |
+|---|---|
+| 重名脚本 | 按上表顺序**先到先得**；`config.pinned` 的 3 个本地修复版最后强制覆盖 |
+| 非法文件名 | 只允许 `[A-Za-z0-9_.-].js`。带空格 / 括号 / 中文的脚本（如 `fqdj (2).js`）自动跳过，否则 `ext` 拼出的 raw URL 无法匿名引用 |
+| 列表层 | **全量跑**，150 个都留下检测数据 |
+| 播放深检 | 命中 `blocklist` / `adultKeywords` / `panKeywords` 的**新源跳过**（已收录源必测），既避免成人/网盘站混入，也省 CI 时间 |
+| 纳入订阅 | `exclude` + 成人过滤 + **连续 2 天可播** 三重把关 —— 源范围扩大 ≠ 订阅一夜暴涨 |
+
+> 👨‍👩‍👧 扩展仓里成人向源不少（`EXPORNTOONS` / `KoreaPornMovie` / `javxx` / `missav` 等），已列入 `config.blocklist`；`avdb` 是历史收录项不受过滤影响，需要儿童纯净版见 [家庭内容过滤](#家庭内容过滤)。
+>
+> ⚠️ 新源第一次跑只记命中数（`hits=1`），**连续第 2 天仍可播才会自动进入主订阅**，这是防抖动设计，不是没生效。
+
+**2026-11-12 首跑实测**（本地境内视角，耗时 7 分 26 秒）：
+
+| 环节 | 数量 | 说明 |
+|---|---:|---|
+| 合并脚本 | **149** | 72 + 44 + 33；重名跳过 88、非法文件名跳过 1 |
+| 列表可用 | **35** | 单一 fork 时只有 21 |
+| 播放候选 | 25 | 成人/网盘过滤跳过 10 个（beeg / madou / pomo / pppPorn 等） |
+| 播放可播 | **12** | 比原 10 源多出 `dmxq`、`duboku`、`zym` 三个新源 |
+| 主订阅 | 10 | 三个新源 `hits=1`，按阈值**第 2 次检测仍通过才会自动纳入** |
+
+> ✅ 扩源有效：确实多识别出 3 个可播源（`dmxq` 24 条 m3u8、`duboku` 48 条 m3u8、`zym` m3u8）。
+> ⏳ 首跑订阅数不变是**正常的防抖动行为**，不是没生效：下一次检测这 3 个仍可播就会自动写进 `subs/vod.json`，无需手工加。
+
+**调整范围**：把 `config.upstreams` 里某条 `enabled` 改成 `false` 即可退回单仓库；加新仓库按同格式加一条即可，**workflow 会自动循环 clone，不用改 YAML**。放宽/收紧过滤改 `blocklist` / `adultKeywords` / `panKeywords`，改完 `./tools/publish.sh` 推送生效。
+
+**想立刻纳入新源**：把 `config.thresholds.minHitsToAdd` 临时改成 `1` 跑一次，或等下一次自动检测（云端 push 触发 / 次日 03:00）。
 
 ### 每天做什么
 
-1. `git clone --depth=1` 上游 `hanzhenya/xptv-extensions`，取全部 `js/` 扩展源
-2. 组装检测目录：上游全量 ＋ 项目独有 ＋ **本地修复版优先覆盖**
-3. `tools/check.js` 跑列表层（`getConfig` + `getCards` 真实请求）
-4. 对「列表可用源 ＋ 已收录源」跑 `tools/playcheck.js` 播放链路深检（取剧集 → 播放地址 → 真实拉流校验）
+1. 读 `config.upstreams`，按 `enabled` 循环 `git clone --depth=1` 全部 4 个仓库，取各自 `js/` 与订阅 json（反查 `name` / `api`）
+2. 按优先级**合并去重**（约 150 脚本）＋ 项目独有补入 ＋ 本地修复版强制覆盖，过滤非法文件名
+3. `tools/check.js` 对合并目录跑列表层**全量检测**（`getConfig` + `getCards` 真实请求）
+4. 对「列表可用源 ＋ 已收录源」**减去成人/网盘过滤名单**跑 `tools/playcheck.js` 播放链路深检（取剧集 → 播放地址 → 真实拉流校验）
 5. 按 `automation/config.json` 收敛 `subs/vod.json` / `playable.json` / `js/`
 6. 写 `docs/state.json`（累计命中）、`docs/last-run.json`（本次摘要）、`docs/result-<日期>-{list,play}.json`（原始数据）
 7. 重写本页 AUTO 自动区块；**有文件变化才**用 `[auto-sync]` 前缀提交推送（自动提交不会再次触发工作流）
@@ -241,7 +289,7 @@ xptv-sources/
 | `minKeepRatio` | 0.5 | 单次可播数低于已有收录数一半 → 判定「检测环境异常」，**只增不删** |
 | `minAbsoluteOk` | 3 | 可播数为 0 → **完全不动**订阅 |
 
-`config.exclude` 里的源（网盘类、站点改版、成人向不稳定）永不自动纳入；`adultKeywords` 命中的新源也会被过滤（**已收录的 `avdb` 不受影响**）。手工从 `vod.json` 删掉的源会被记为 `manualExclude`，不会被自动加回来，家庭内容过滤的改动能一直保留。
+`config.exclude` 里的源（网盘类、站点改版、成人向不稳定）永不自动纳入；`blocklist` / `adultKeywords` / `panKeywords` 命中的新源连播放深检都不跑（**已收录的 `avdb` 不受影响**）。手工从 `vod.json` 删掉的源会被记为 `manualExclude`，不会被自动加回来，家庭内容过滤的改动能一直保留。
 
 ### 改配置 / 手动运行
 
@@ -250,16 +298,16 @@ xptv-sources/
 - **改时间**：改 workflow 的 cron（GitHub 一律用 UTC）。想改北京时间 06:00 → `0 22 * * *`
 - **暂停**：仓库 → Actions → `XPTV 每日自动收集` → **Disable workflow**
 - **立即跑一次**：Actions 页点 **Run workflow**；勾 `dry_run` 则只输出结论、不写文件不提交
-- **加更多上游仓库**：`config.upstreams` 里预留了 `Yswag/xptv-extensions`（`enabled: false`），启用时还需在 workflow 里增加一次 clone 并合并 `js/`
-- **本地手动跑完整流程**（用你自己的网络视角定稿）：
+- **加 / 减上游仓库**：直接改 `config.upstreams` 的 `enabled` 或新增条目即可，workflow 会自动循环 clone（B 模式已支持多仓库，**无需改 YAML**）
+- **本地手动跑完整流程**（用你自己的网络视角定稿）：按 `config.upstreams` 顺序把 4 个仓库 clone 到 `/tmp/upstreams/1..4`，然后：
   ```bash
-  git clone --depth=1 https://github.com/hanzhenya/xptv-extensions.git /tmp/upstream
-  cd ~/Desktop/xptv-sources/tools && npm install
-  cd ..
+  cd ~/Desktop/xptv-sources/tools && npm install && cd ..
   node automation/auto-collect.js \
-    --upstream-dir /tmp/upstream/js --subs-dir /tmp/upstream/subs --dry-run
+    --upstream-dir /tmp/upstreams/1/js --upstream-dir /tmp/upstreams/2/js \
+    --upstream-dir /tmp/upstreams/3/js --upstream-dir /tmp/upstreams/4/js \
+    --subs-dir /tmp/upstreams/1/subs --subs-dir /tmp/upstreams/3 --dry-run
   ```
-  去掉 `--dry-run` 才实际写文件，再 `./tools/publish.sh` 推送。离线复算可加 `--from-list <json> --from-play <json>`。
+  `--upstream-dir` / `--subs-dir` 可重复传，也可用逗号分隔。去掉 `--dry-run` 才实际写文件，再 `./tools/publish.sh` 推送。离线复算可加 `--from-list <json> --from-play <json>`。
 
 ### ⚠️ 一个必须知道的差异
 
@@ -289,7 +337,8 @@ cat playcheck-result.json                           # 结构化结果
 ```bash
 cd ~/Desktop/xptv-sources/tools
 TIMEOUT=12000 node check.js ../js                   # 项目内源
-TIMEOUT=12000 node check.js /path/to/xptv-extensions/js   # 上游全量 72 源
+TIMEOUT=12000 node check.js /tmp/upstreams/1/js           # 任一上游目录
+TIMEOUT=12000 node check.js /tmp/合并后的js目录             # B 模式约 150 源全量
 ```
 `check.js` 模拟 XPTV 运行时 API（`createCheerio` / `$fetch` / `respHeaders` / `$cache` / `$utils` / `$html` / `createCryptoJS` / `loadJSEncrypt`），并发真实请求取列表条数，并对域名做独立 HTTP 复核，区分「源代码坏了」和「网络不通」。
 
@@ -356,7 +405,7 @@ cat playcheck-result.json
 - 📺 **直播源**（huya / 斗鱼）地址带时效签名，单次检测结果会波动。
 - 🛡️ **4k-av** 有反爬限流，刷列表过频会临时 403。
 - 📦 **网盘源**需外部网盘 App / 解析，XPTV 播放器无法直放。
-- 🤖 上游同名脚本**每天 03:00 自动同步**（见[每日自动收集](#每日自动收集)），但 `config.pinned` 里的 3 个本地修复版不会被覆盖。
+- 🤖 **4 个上游仓库**的脚本每天 03:00 自动同步（见[每日自动收集](#每日自动收集)），按配置顺序去重，`config.pinned` 里的 3 个本地修复版永不被覆盖。
 - 🔧 想永久禁用某个源，把它加进 `automation/config.json` 的 `exclude`；只想临时去掉，直接从 `subs/vod.json` 删掉即可（自动流程会尊重手工删除）。
 - 📄 本页开头「自动同步状态」下的 AUTO 自动区块（脚本用固定注释标记定位）由 `auto-collect.js` 重写，**手工编辑会被覆盖**；其余章节可自由修改并随 `./tools/publish.sh` 推送。
 
@@ -370,6 +419,7 @@ cat playcheck-result.json
 | 2026-11-12 | 上线 GitHub Actions **每日北京时间 03:00** 自动收集与收敛（阈值防抖动、安全阀、pinned 修复版保护、README AUTO 区块） |
 | 2026-11-12 | 本页升级为**说明帮助文档**：一分钟上手、文档导航、订阅字段说明、家庭内容过滤、FAQ 故障排查、更新日志；随本次提交推送上线 |
 | 2026-11-12 | 首次云端自动实跑成功（列表 21 / 可播 13 / 订阅 10 源不变），AUTO 区块已由云端自动刷新并同步回本地 |
+| 2026-11-12 | 升级 **B 全量模式**：自动汇总 4 个上游仓库；首跑 149 脚本 → 列表 35 → 可播 12，新识别 `dmxq` / `duboku` / `zym` 三个可播源，待第二次通过后自动纳入 |
 
 ---
 

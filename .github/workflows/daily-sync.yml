@@ -26,7 +26,8 @@ jobs:
     # 自动同步产生的提交不重复触发；自动提交也不会命中上面的 paths，这里是双保险
     if: github.event_name != 'push' || !contains(toJSON(github.event.head_commit.message), '[auto-sync]')
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    # B 全量模式：4 个仓库合并约 150 个源，检测耗时变长
+    timeout-minutes: 60
     permissions:
       contents: write
 
@@ -47,20 +48,49 @@ jobs:
         working-directory: tools
         run: npm ci --no-audit --no-fund
 
-      - name: 克隆上游源仓库
+      - name: 按配置克隆全部上游源仓库
         run: |
-          rm -rf /tmp/upstream
-          git clone --depth=1 --branch main \
-            https://github.com/hanzhenya/xptv-extensions.git /tmp/upstream
-          echo "上游源文件数: $(ls /tmp/upstream/js/*.js | wc -l)"
+          set -euo pipefail
+          node <<'NODE' > /tmp/upstream-list.txt
+          const c = require('./automation/config.json')
+          for (const u of c.upstreams.filter(x => x.enabled !== false)) {
+            const repo = u.repo.replace(/^https:\/\/github.com\//, '').replace(/\.git$/, '')
+            console.log([repo, u.branch || 'main', u.jsPath || 'js', u.subsPath || 'subs'].join('|'))
+          }
+          NODE
+          echo "本次启用上游仓库: $(wc -l < /tmp/upstream-list.txt) 个"
+          cat /tmp/upstream-list.txt
+          rm -rf /tmp/upstreams
+          mkdir -p /tmp/upstreams
+          i=0
+          UP_ARGS=""
+          SUB_ARGS=""
+          while IFS='|' read -r repo branch jspath subspath; do
+            [ -z "$repo" ] && continue
+            i=$((i + 1))
+            echo "克隆 [$i] $repo ($branch)"
+            if ! git clone --depth=1 --branch "$branch" "https://github.com/${repo}.git" "/tmp/upstreams/$i"; then
+              echo "  ⚠️ 克隆失败，跳过该仓库"
+              continue
+            fi
+            JSDIR="/tmp/upstreams/$i/$jspath"
+            SUBDIR="/tmp/upstreams/$i/$subspath"
+            if [ -d "$JSDIR" ]; then
+              UP_ARGS="$UP_ARGS --upstream-dir $JSDIR"
+              echo "  js/: $(ls "$JSDIR"/*.js 2>/dev/null | wc -l) 个脚本"
+            else
+              echo "  ⚠️ 缺少 js 目录 $JSDIR"
+            fi
+            if [ -d "$SUBDIR" ]; then SUB_ARGS="$SUB_ARGS --subs-dir $SUBDIR"; fi
+          done < /tmp/upstream-list.txt
+          echo "UP_ARGS=$UP_ARGS" >> "$GITHUB_ENV"
+          echo "SUB_ARGS=$SUB_ARGS" >> "$GITHUB_ENV"
 
-      - name: 自动收集与收敛
+      - name: 自动收集与收敛（全量检测）
         run: |
           EXTRA=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then EXTRA="--dry-run"; fi
-          node automation/auto-collect.js \
-            --upstream-dir /tmp/upstream/js \
-            --subs-dir /tmp/upstream/subs $EXTRA
+          node automation/auto-collect.js $UP_ARGS $SUB_ARGS $EXTRA
 
       - name: 提交并推送变更
         if: inputs.dry_run != true
