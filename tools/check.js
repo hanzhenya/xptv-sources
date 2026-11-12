@@ -29,6 +29,13 @@ function makeCache() {
 
 // XPTV 的 $html: 基于 cheerio 的选择器封装
 function makeHtml() {
+  // cheerio Element 节点没有 outerHTML，需先序列化，否则 attr/text 全空造成误判
+  const htmlOf = (el) => {
+    if (!el) return ''
+    if (typeof el === 'string') return el
+    if (el.outerHTML) return el.outerHTML
+    try { return cheerio.load('').html(el) || '' } catch (e) { return '' }
+  }
   const pick = (root, sel) => {
     const $ = cheerio.load(root || '')
     return $(sel).toArray()
@@ -38,19 +45,19 @@ function makeHtml() {
     element: (root, sel) => pick(root, sel)[0] || null,
     attr: (el, sel, name) => {
       if (!el) return ''
-      const $ = cheerio.load(el.outerHTML || '')
+      const $ = cheerio.load(htmlOf(el))
       const v = $(sel).first().attr(name)
       return v == null ? '' : String(v)
     },
     text: (el, sel) => {
       if (!el) return ''
-      const $ = cheerio.load(el.outerHTML || '')
+      const $ = cheerio.load(htmlOf(el))
       if (sel) return $(sel).first().text().trim()
-      return $(el).text().trim()
+      return $.root().text().trim()
     },
     html: (el, sel) => {
       if (!el) return ''
-      const $ = cheerio.load(el.outerHTML || '')
+      const $ = cheerio.load(htmlOf(el))
       return sel ? $(sel).first().html() : $.html()
     },
     remove: (el) => el,

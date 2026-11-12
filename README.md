@@ -4,11 +4,14 @@
 
 ## 导入方法
 
-在 XPTV 设置 → 订阅配置里填入下面这个地址（或导入本地 `subs/vod.json`）：
+在 XPTV 设置 → 订阅配置里填入下面任一地址（或导入本地同名文件）：
 
-```
-https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json
-```
+| 用途 | 订阅地址 |
+|---|---|
+| **推荐**：5 个验证可播 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/playable.json` |
+| 8 个源全量（含网盘/直播源） | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json` |
+
+> 两者区别见 [播放链路检测报告](docs/播放链路检测报告.md)：8 源里只有 5 个能保证直接播放，`hdmoli`/`多多影音` 是网盘源、`huya` 是直播源。
 
 > ✅ **已上线**（2026-11-12）：`hanzhenya/xptv-sources` 为**公开仓库**，`main` 分支。订阅配置与 8 个 js 均已匿名访问验证（HTTP 200、内容与本地逐字节一致），按线上地址下载后沙箱实跑 8/8 出列表。
 >
@@ -16,18 +19,20 @@ https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json
 
 ## 收录的 8 个源
 
-全部经过真实请求验证：按配置 URL 下载 js → 在 XPTV 运行时沙箱里实跑 `getConfig()` + `getCards()` → 成功拿到列表。
+全部经过真实请求验证：按配置 URL 下载 js → 在 XPTV 运行时沙箱里实跑 `getConfig()` + `getCards()` → 成功拿到列表。**播放状态**列来自 `playcheck.js` 的播放链路深检（详见报告）。
 
-| 源名 | api | 列表条数 | 说明 |
-|---|---|---:|---|
-| anime1 | `csp_anime1` | 1964 | 列表量最大 |
-| huya | `csp_huya` | 120 | 全混淆版 js（114KB），真机偶有兼容问题 |
-| avdb | `csp_avdb` | 100 | |
-| 多多影音 | `csp_yydsys` | 72 | |
-| 4k-av | `csp_4kav` | 42 | |
-| hdmoli | `csp_hdmoli` | 40 | |
-| 农民影视 | `csp_wwgz` | 30 | **已修复播放**（见下） |
-| PPnix | `csp_ppnix` | 24 | |
+| 源名 | api | 列表条数 | 播放 | 说明 |
+|---|---|---:|:---:|---|
+| anime1 | `csp_anime1` | 1964 | ✅ | 列表量最大；已修 cookie 防盗链 |
+| huya | `csp_huya` | 120 | ⚠️ | 直播 FLV 流，带时效签名，状态波动 |
+| avdb | `csp_avdb` | 100 | ✅ | m3u8 + 分片 |
+| 多多影音 | `csp_yydsys` | 72 | 📦 | 网盘源，设计上不返回播放流 |
+| 4k-av | `csp_4kav` | 42 | ✅* | 曾实测可播；站点有间歇 403 限流 |
+| hdmoli | `csp_hdmoli` | 40 | 📦 | 站点已转纯网盘下载站，无在线播放器 |
+| 农民影视 | `csp_wwgz` | 30 | ✅ | **已修复播放**（见下） |
+| PPnix | `csp_ppnix` | 24 | ✅ | m3u8 + 分片 |
+
+✅ 可直接播放 ｜ ⚠️ 直播/不稳定 ｜ 📦 网盘跳转 ｜ * 站点侧限流
 
 `api` 命名沿用仓库既有体系（`subs/vod.json`、`subs/18.json`、`subs/pan.json` 反查得到），命名不匹配会导致 XPTV 加载不出源，不要随意改。
 
@@ -46,20 +51,34 @@ https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json
 
 回归验证：`api.nmvod.me` 请求从链路中完全消失，直接返回可播 m3u8。
 
+## anime1 播放修复（2026-11-12）
+
+播放 API 会下发 3 个 `set-cookie` 作防盗链签名 —— 实测**不带 Cookie 返回 403，带 Cookie 返回 206 + `ftypisom`**。原实现只认大写 `Set-Cookie`，且用 `split(',')` 粗暴切分（`expires=Thu, 12 Nov ...` 里的逗号会把 cookie 切碎）；键名不符时直接抛异常被 `catch` 吞掉 → 返回空地址。已改为兼容大小写 / 数组 / 合并字符串、按「逗号后紧跟 `key=`」分割、修正 `User-Anent` 拼写、补全相对地址。复测 ✅ mp4 可播。
+
+## 4k-av 说明
+
+源逻辑**本来就是对的**（曾实测 m3u8 + `0000.m4s` 分片 200）。但站点从 `4kmp.com` 迁到 `4k-av.com` 后有**间歇性 403 反爬限流**，连首页都可能 403 —— 这就是「海报正常但点播放没反应」的外部原因。
+
+已还原原版域名，只保留空值保护、单集回退、地址兜底与补全。⚠️ **不要改 `appConfig.site`**：试过改成 `www.4k-av.com`，不带尾斜杠同样 403，反而会把列表打挂。遇到加载失败稍后刷新即可。
+
 ## 目录结构
 
 ```
 xptv-sources/
-├── README.md            本说明
+├── README.md                    本说明
+├── docs/
+│   └── 播放链路检测报告.md       8 源逐一的播放链路结论与修复记录
 ├── subs/
-│   └── vod.json         XPTV 导入用订阅配置（8 个源）
-├── js/                  8 个扩展脚本
+│   ├── vod.json                 8 源全量订阅
+│   └── playable.json            5 个验证可播（推荐）
+├── js/                          8 个扩展脚本
 │   ├── anime1.js  huya.js  avdb.js  yydsys.js
 │   └── 4kav.js  hdmoli.js  wwgz.js  ppnix.js
 └── tools/
-    ├── check.js         可用性检测（Node 沙箱模拟 XPTV 运行时）
-    ├── package.json     检测脚本依赖
-    └── publish.sh       一键提交推送
+    ├── check.js                 列表可用性检测
+    ├── playcheck.js             ★ 播放链路深检（列表→剧集→地址→真实拉流）
+    ├── package.json             两个检测脚本的依赖
+    └── publish.sh               一键提交推送
 ```
 
 ## 常用操作
@@ -71,13 +90,23 @@ cd ~/Desktop/xptv-sources
 ./tools/publish.sh 其他仓库名    # 指定仓库
 ```
 
-**复测所有源是否还活着**
+**★ 复测播放链路（推荐，能发现「有海报但播不了」）**
 ```bash
 cd ~/Desktop/xptv-sources/tools
 npm install
+TIMEOUT=15000 node playcheck.js                      # 8 个源全量
+TIMEOUT=15000 node playcheck.js ../js 4kav,anime1     # 只测指定源
+cat playcheck-result.json                           # 结构化结果
+```
+`playcheck.js` 会走完 `getConfig → getCards → getTracks → getPlayinfo → 真实拉流`，校验 m3u8 主/子清单与分片、mp4 `ftyp`、TS `0x47`、FLV 头，并标出**卡在哪一环**。
+
+**列表层检测（另一个维度）**
+```bash
 TIMEOUT=15000 node check.js ../js
 ```
-`check.js` 会模拟 XPTV 运行时 API（`createCheerio` / `$fetch` / `$cache` / `$utils` / `$html` / `createCryptoJS` / `loadJSEncrypt`），逐个真实发请求取列表条数，并对域名做独立 HTTP 复核，区分「源代码坏了」和「网络不通」。
+`check.js` 模拟 XPTV 运行时 API（`createCheerio` / `$fetch` / `$cache` / `$utils` / `$html` / `createCryptoJS` / `loadJSEncrypt`），逐个真实发请求取列表条数，并对域名做独立 HTTP 复核，区分「源代码坏了」和「网络不通」。
+
+> ⚠️ **列表 8/8 通过 ≠ 8 个都能播**。列表接口和播放接口常是两台不同服务器，本项目里 `anime1`、`农民影视` 都是列表正常但播放断链。所以排查播放问题时**必须用 `playcheck.js`**。
 
 ## 注意事项
 

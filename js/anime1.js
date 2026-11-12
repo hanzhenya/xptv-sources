@@ -96,11 +96,14 @@ async function getPlayinfo(ext) {
     let { href } = ext
     let api = 'https://v.anime1.me/api'
     try {
+        // 修正原代码 User-Anent 拼写错误
         const { data } = await $fetch.get(href, {
-            headers: { 'User-Anent': UA },
+            headers: { 'User-Agent': UA },
         })
         const $ = cheerio.load(data)
-        let apireq = $('.vjscontainer > video').attr('data-apireq')
+        const apireq = $('.vjscontainer > video').attr('data-apireq')
+        if (!apireq) return jsonify({ urls: [] })
+
         const apires = await $fetch.post(api, `d=${apireq}`, {
             headers: {
                 'User-Agent': UA,
@@ -108,19 +111,35 @@ async function getPlayinfo(ext) {
             },
         })
 
-        let playUrl = argsify(apires.data).s[0].src
-        let headers = apires.respHeaders
+        const payload = argsify(apires.data)
+        const playUrl = payload?.s?.[0]?.src
+        if (!playUrl) return jsonify({ urls: [] })
 
-        let set_cookie = headers['Set-Cookie']
+        // 2026-11 修复: API 会下发 3 个 set-cookie 作为防盗链签名(实测不带 Cookie 返回 403)。
+        // 原实现只认大写 'Set-Cookie'、且用 split(',') 粗暴切分:
+        //   - 键名大小写不符时直接抛异常被 catch 吞掉 → 返回空地址
+        //   - expires=Thu, 12 Nov ... 里的逗号会把 cookie 切碎
+        // 改为兼容大小写/数组/合并字符串,并按「逗号后紧跟 key=」分割。
+        const rh = apires.respHeaders || {}
+        let raw = rh['Set-Cookie'] || rh['set-cookie'] || ''
+        if (!raw && apires.headers && typeof apires.headers.getSetCookie === 'function') {
+            raw = apires.headers.getSetCookie()
+        }
+        const parts = Array.isArray(raw) ? raw : String(raw || '').split(/,\s*(?=[A-Za-z0-9_-]+=)/)
         let cookie = ''
-        set_cookie.split(',').forEach((e) => {
-            cookie += `${e.split(';')[0]}; `
+        parts.forEach((e) => {
+            const kv = String(e || '').split(';')[0].trim()
+            if (kv) cookie += `${kv}; `
         })
 
-        playUrl = playUrl.startsWith('https:') ? playUrl : 'https:' + playUrl
-        return jsonify({ urls: [playUrl], headers: [{ 'User-Agent': UA, Cookie: cookie }] })
+        const url = playUrl.startsWith('http') ? playUrl : 'https:' + playUrl
+        return jsonify({
+            urls: [url],
+            headers: [{ 'User-Agent': UA, Cookie: cookie, Referer: 'https://anime1.me/' }],
+        })
     } catch (error) {
         $print(error)
+        return jsonify({ urls: [] })
     }
 }
 

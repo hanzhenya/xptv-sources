@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "name": "anime1",
+      "type": 3,
+      "api": "csp_anime1",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/anime1.js"
+    },
+    {
+      "name": "avdb",
+      "type": 3,
+      "api": "csp_avdb",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/avdb.js"
+    },
+    {
+      "name": "4k-av",
+      "type": 3,
+      "api": "csp_4kav",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/4kav.js"
+    },
+    {
+      "name": "农民影视",
+      "type": 3,
+      "api": "csp_wwgz",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/wwgz.js"
+    },
+    {
+      "name": "PPnix",
+      "type": 3,
+      "api": "csp_ppnix",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/ppnix.js"
+    }
+  ]
+}

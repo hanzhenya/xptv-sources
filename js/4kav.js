@@ -109,17 +109,22 @@ async function getTracks(ext) {
     let playlist = $html.elements(data, '#rtlist li')
     if (playlist.length > 0) {
         playlist.forEach((element) => {
-            let name = $html.text(element, 'span')
-            let url = $html.attr(element, 'img', 'src').replace('screenshot.jpg', '')
+            let name = $html.text(element, 'span') || '播放'
+            // 2026-11 加固: img[src] 缺失時原本會對 undefined 調用 replace 而拋異常
+            const src = $html.attr(element, 'img', 'src')
+            if (!src) return
+            let epUrl = src.replace('screenshot.jpg', '')
             tracks.push({
                 name: name,
                 pan: '',
                 ext: {
-                    url,
+                    url: epUrl,
                 },
             })
         })
-    } else {
+    }
+    if (tracks.length === 0) {
+        // 單集或播放列表改版時,回退詳情頁(getPlayinfo 可從詳情頁取播放地址)
         tracks.push({
             name: '播放',
             pan: '',
@@ -141,7 +146,9 @@ async function getTracks(ext) {
 
 async function getPlayinfo(ext) {
     ext = argsify(ext)
-    let url = ext.url.replace('www.', '')
+    const pageUrl = ext.url
+    if (!pageUrl) return jsonify({ urls: [] })
+    let url = pageUrl.replace('www.', '')
 
     const { data } = await $fetch.get(url, {
         headers: {
@@ -149,9 +156,16 @@ async function getPlayinfo(ext) {
         },
     })
 
+    // 2026-11 加固: 播放地址為空時兜底抓頁面內的 m3u8/mp4,並補全相對地址
     let playUrl = $html.attr(data, '#MainContent_videowindow video source', 'src')
+    if (!playUrl) {
+        const m = String(data || '').match(/https?:\/\/[^"'\s<>]+\.(?:m3u8|mp4)(?:\?[^"'\s<>]*)?/i)
+        if (m) playUrl = m[0]
+    }
+    if (!playUrl) return jsonify({ urls: [] })
+    try { playUrl = new URL(playUrl, url).href } catch (e) { return jsonify({ urls: [] }) }
 
-    return jsonify({ urls: [playUrl] })
+    return jsonify({ urls: [playUrl], headers: [{ 'User-Agent': UA }] })
 }
 
 async function search(ext) {
