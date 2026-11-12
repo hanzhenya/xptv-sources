@@ -1,0 +1,10 @@
+{
+  "name": "xptv-sources-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "XPTV 源可用性检测工具",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "crypto-js": "4.2.0"
+  }
+}
