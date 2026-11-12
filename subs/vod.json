@@ -59,6 +59,30 @@
       "type": 3,
       "api": "csp_douyu",
       "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/douyu.js"
+    },
+    {
+      "name": "独播库",
+      "type": 3,
+      "api": "csp_duboku",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/duboku.js"
+    },
+    {
+      "name": "zym",
+      "type": 3,
+      "api": "csp_zym",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/zym.js"
+    },
+    {
+      "name": "huangguo",
+      "type": 3,
+      "api": "csp_huangguo",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/huangguo.js"
+    },
+    {
+      "name": "hohoj",
+      "type": 3,
+      "api": "csp_hohoj",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/hohoj.js"
     }
   ]
 }

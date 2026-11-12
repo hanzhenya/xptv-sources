@@ -2,45 +2,45 @@
   "version": 1,
   "sources": {
     "anime1": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "anime1",
       "api": "csp_anime1",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "mp4",
       "listCount": 1964,
       "lastDetail": "mp4 流可播 (ftyp)"
     },
     "avdb": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "avdb",
       "api": "csp_avdb",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 100,
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
     },
     "ppnix": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "PPnix",
       "api": "csp_ppnix",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 24,
       "lastDetail": "清单+分片可播 (分片 65536B)"
     },
     "wwgz": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
       "included": true,
       "name": "农民影视",
       "api": "csp_wwgz",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 30,
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)",
@@ -48,77 +48,77 @@
       "lastStage": "getCards"
     },
     "apple": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "小蘋果",
       "api": "csp_apple",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 20,
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
     },
     "7sefun": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "7sefun",
       "api": "csp_7sefun",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "mp4",
       "listCount": 20,
       "lastDetail": "mp4 流可播 (ftyp)"
     },
     "kuaikaw": {
-      "hits": 1,
-      "misses": 0,
+      "hits": 0,
+      "misses": 1,
       "included": true,
       "name": "kuaikaw",
       "api": "csp_kuaikaw",
       "lastOk": "2026-11-12 14:26",
       "mediaType": "mp4",
       "listCount": 10,
-      "lastDetail": "mp4 流可播 (ftyp)",
-      "lastFail": "2026-11-12 13:53",
+      "lastDetail": "HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "stream"
     },
     "rrmj": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "rrmj",
       "api": "csp_rrmj",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "mp4",
       "listCount": 30,
       "lastDetail": "mp4 流可播 (ftyp)"
     },
     "huya": {
-      "hits": 0,
-      "misses": 1,
+      "hits": 1,
+      "misses": 0,
       "included": true,
       "name": "huya",
       "api": "csp_huya",
-      "lastOk": "2026-11-12 13:53",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "flv",
       "listCount": 120,
-      "lastDetail": "HTTP 403 ",
+      "lastDetail": "FLV 直播流可播 (FLV header)",
       "lastFail": "2026-11-12 14:26",
       "lastStage": "stream"
     },
     "douyu": {
-      "hits": 5,
+      "hits": 6,
       "misses": 0,
       "included": true,
       "name": "斗鱼",
       "api": "csp_douyu",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "flv",
       "listCount": 8,
       "lastDetail": "FLV 直播流可播 (FLV header)"
     },
     "4kav": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
       "included": false,
       "name": "4k-av",
@@ -126,7 +126,7 @@
       "lastFail": "2026-11-12 12:46",
       "lastStage": "getCards",
       "lastDetail": "清单+分片可播 (分片 65536B)",
-      "lastOk": "2026-11-12 13:53",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 48
     },
@@ -162,21 +162,21 @@
     },
     "hdmoli": {
       "hits": 0,
-      "misses": 3,
+      "misses": 4,
       "included": false,
       "name": "hdmoli",
       "api": "csp_hdmoli",
-      "lastFail": "2026-11-12 14:26",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "getPlayinfo",
       "lastDetail": "getPlayinfo 抛异常: ENOTFOUND"
     },
     "lmm85": {
       "hits": 0,
-      "misses": 3,
+      "misses": 4,
       "included": false,
       "name": "lmm85",
       "api": "csp_lmm85",
-      "lastFail": "2026-11-12 14:26",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "getPlayinfo",
       "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}"
     },
@@ -223,11 +223,11 @@
     },
     "zxzj": {
       "hits": 0,
-      "misses": 3,
+      "misses": 4,
       "included": false,
       "name": "zxzj",
       "api": "csp_zxzj",
-      "lastFail": "2026-11-12 14:26",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "stream",
       "lastDetail": "返回 HTML 而非视频（多为防盗链/需登录/地址失效）"
     },
@@ -252,25 +252,25 @@
       "lastDetail": "HTTP 403 "
     },
     "hohoj": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
-      "included": false,
+      "included": true,
       "name": "hohoj",
       "api": "csp_hohoj",
-      "lastOk": "2026-11-12 13:53",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 24,
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
     },
     "huangguo": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
-      "included": false,
+      "included": true,
       "name": "huangguo",
       "api": "csp_huangguo",
-      "lastOk": "2026-11-12 13:53",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
-      "listCount": 31,
+      "listCount": 34,
       "lastDetail": "清单+分片可播 (分片 65536B)"
     },
     "pornhub": {
@@ -296,23 +296,23 @@
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
     },
     "duboku": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
-      "included": false,
+      "included": true,
       "name": "独播库",
       "api": "csp_duboku",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 48,
       "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
     },
     "meijumi": {
       "hits": 0,
-      "misses": 1,
+      "misses": 2,
       "included": false,
       "name": "meijumi",
       "api": "csp_meijumi",
-      "lastFail": "2026-11-12 14:26",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "getPlayinfo",
       "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}"
     },
@@ -328,23 +328,26 @@
     },
     "pandatv": {
       "hits": 0,
-      "misses": 1,
+      "misses": 2,
       "included": false,
       "name": "pandatv",
       "api": "csp_pandatv",
-      "lastFail": "2026-11-12 14:26",
+      "lastFail": "2026-11-12 14:43",
       "lastStage": "getPlayinfo",
       "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandaliv"
     },
     "ppp": {
-      "hits": 0,
-      "misses": 1,
+      "hits": 1,
+      "misses": 0,
       "included": false,
       "name": "pppHub",
       "api": "csp_ppron",
       "lastFail": "2026-11-12 14:26",
       "lastStage": "getCards",
-      "lastDetail": "列表为空 / 异常: ERR_INVALID_URL"
+      "lastDetail": "清单+分片可播 (分片 65536B)",
+      "lastOk": "2026-11-12 14:43",
+      "mediaType": "m3u8",
+      "listCount": 24
     },
     "star2": {
       "hits": 0,
@@ -357,16 +360,27 @@
       "lastDetail": "网盘源：track 只有 pan 跳转链接，源设计上不返回播放流"
     },
     "zym": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
-      "included": false,
+      "included": true,
       "name": "zym",
       "api": "csp_zym",
-      "lastOk": "2026-11-12 14:26",
+      "lastOk": "2026-11-12 14:43",
       "mediaType": "m3u8",
       "listCount": 40,
       "lastDetail": "清单+分片可播 (分片 65536B)"
+    },
+    "yhdm": {
+      "hits": 1,
+      "misses": 0,
+      "included": false,
+      "name": "yhdm",
+      "api": "csp_yhdm",
+      "lastOk": "2026-11-12 14:43",
+      "mediaType": "m3u8",
+      "listCount": 24,
+      "lastDetail": "清单+分片可播 (分片 65536B)"
     }
   },
-  "lastRun": "2026-11-12 14:26"
+  "lastRun": "2026-11-12 14:43"
 }
