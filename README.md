@@ -10,7 +10,13 @@
 https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json
 ```
 
-> 仓库尚未在 GitHub 创建时该地址不可用。创建/推送成功后即可使用。
+> **首次使用需先创建空仓库**（本机 GitHub API 凭据已失效，SSH 不支持自动建库，这一步必须手动做一次）：
+> 1. 打开 https://github.com/new?name=xptv-sources
+> 2. 可见性选 **Public**；README / .gitignore / License **三个都不要勾**（必须是空仓库，否则无法直接 push）
+> 3. 点 **Create repository**
+> 4. 回到项目目录执行 `./tools/publish.sh`，推送完成后上面的订阅地址即可访问
+>
+> 仓库创建前该地址返回 404 属正常现象。
 
 ## 收录的 8 个源
 
