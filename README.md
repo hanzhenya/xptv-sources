@@ -49,20 +49,20 @@
 <!-- AUTO:BEGIN -->
 > 🤖 本节由 `automation/auto-collect.js` 自动生成，**请勿手工编辑**（每天北京时间 03:00 更新）。
 
-**最近自动检测**：2026-11-12 12:46（北京时间） · 离线复算 · 上游 72 源 → 列表可用 20 → 播放可播 11 → 主订阅 **10 源** · 本次新增：无 · 移除：无
+**最近自动检测**：2026-11-12 13:53（北京时间） · 上游 72 源 → 列表可用 21 → 播放可播 13 → 主订阅 **10 源** · 本次新增：无 · 移除：无
 
 | 源名 | api | 流格式 | 列表条数 | 连续通过 | 状态 |
 |---|---|:---:|---:|:---:|:---:|
-| anime1 | `csp_anime1` | mp4 | 1964 | 3 天 | ✅ |
-| avdb | `csp_avdb` | m3u8 | 100 | 3 天 | ✅ |
-| PPnix | `csp_ppnix` | m3u8 | 24 | 3 天 | ✅ |
-| 农民影视 | `csp_wwgz` | m3u8 | 30 | 3 天 | ✅ |
-| 小蘋果 | `csp_apple` | m3u8 | 20 | 3 天 | ✅ |
-| 7sefun | `csp_7sefun` | mp4 | 20 | 3 天 | ✅ |
-| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 3 天 | ✅ |
-| rrmj | `csp_rrmj` | mp4 | 30 | 3 天 | ✅ |
-| huya | `csp_huya` | flv | 120 | 3 天 | ✅ |
-| 斗鱼 | `csp_douyu` | flv | 8 | 3 天 | ✅ |
+| anime1 | `csp_anime1` | mp4 | 1964 | 4 天 | ✅ |
+| avdb | `csp_avdb` | m3u8 | 100 | 4 天 | ✅ |
+| PPnix | `csp_ppnix` | m3u8 | 24 | 4 天 | ✅ |
+| 农民影视 | `csp_wwgz` | m3u8 | 30 | 0 天 | ✅ |
+| 小蘋果 | `csp_apple` | m3u8 | 20 | 4 天 | ✅ |
+| 7sefun | `csp_7sefun` | mp4 | 20 | 4 天 | ✅ |
+| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 0 天 | ✅ |
+| rrmj | `csp_rrmj` | mp4 | 30 | 4 天 | ✅ |
+| huya | `csp_huya` | flv | 120 | 4 天 | ✅ |
+| 斗鱼 | `csp_douyu` | flv | 8 | 4 天 | ✅ |
 
 > 详细归因见 `docs/last-run.json` 与 `docs/result-<日期>-play.json`；手动复测命令见下方「常用操作」。
 <!-- AUTO:END -->
