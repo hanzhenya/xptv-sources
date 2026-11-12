@@ -79,17 +79,29 @@
 
 在 XPTV 设置 → 订阅配置里填入下面任一地址（或导入本地同名文件）：
 
-| 用途 | 订阅地址 |
-|---|---|
-| **推荐**：10 个稳定可播 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json` |
-| 与上者内容相同（兼容旧链接） | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/playable.json` |
-| 回退用：最初的 8 源全量 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/legacy-8.json` |
+| 版本 | 源数 | 订阅地址 |
+|---|---:|---|
+| **全量可播（含 18+）** — 成年人自己用 | **18** | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/all.json` |
+| **家庭儿童版** — 电视 / 孩子设备推荐 | **15** | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/kids.json` |
+| 主订阅 — 自动维护，含 `avdb` 成人向 | 13 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json` |
+| 与主订阅相同（兼容旧链接） | 13 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/playable.json` |
+| 回退用：最初的 8 源全量 | 8 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/legacy-8.json` |
+
+**三种版本怎么选**
+
+| 场景 | 用哪个 | 说明 |
+|---|---|---|
+| 自己的手机 / 电脑，想看全部 | `all.json` | 包含了检测通过的全部可播源，成人向 3 个（`avdb`、`hohoj`、`pppHub`）名称带 **`\| 18+`** 后缀，排在列表最后，不隐藏、不屏蔽 |
+| 客厅电视 / 孩子会碰的设备 | `kids.json` | 剔除全部 18+ 条目，15 个家庭向源，和 `all.json` 同一批可播源 |
+| 想让它每天自动更新 | `vod.json` | 每日 03:00 自动收敛；`all.json` / `kids.json` 是**手工维护**，不会自动改，新可播源出现后跑一次 `node tools/gen-all.js` 即可刷新 |
 
 > ✅ `hanzhenya/xptv-sources` 是**公开仓库**、`main` 分支。所有订阅配置与 js 均按线上 URL 匿名访问验证（HTTP 200、内容与本地逐字节一致），并下载后沙箱实跑复验。
 >
+> ⚠️ 同一个 XPTV 里**不要同时导入** `all.json` 和 `vod.json`：两者有 13 个重叠源，会出现重复条目。按设备选一个即可。
+>
 > 改完任何文件执行 `./tools/publish.sh` 即可更新，XPTV 端刷新订阅生效。
 >
-> 本地导入文件：`~/Desktop/XPTV可播源_10个.json`。
+> 桌面旧文件 `~/Desktop/XPTV可播源_10个.json` 仍可导入，但已不是最新，建议直接用上面的订阅地址。
 
 **订阅文件长什么样**（`subs/vod.json`，XPTV 标准格式，勿改字段名）：
 
@@ -158,9 +170,11 @@
 
 | 做法 | 操作 | 效果 |
 |---|---|:---:|
-| 临时去掉（推荐） | 从 `subs/vod.json`（和 `playable.json`）删掉 `avdb` 一条，推送 | 自动流程会记为 `manualExclude`，**不会被自动加回来** ✅ |
-| 永久禁用 | 把 `avdb` 加进 `automation/config.json` 的 `exclude` | 永不自动纳入 ✅ |
-| 单独做儿童订阅 | 复制 `vod.json` 删掉 `avdb` → 另存为 `subs/kids.json` → 在 XPTV 儿童设备只导入这个地址 | 两台设备互不干扰 ✅ |
+| **直接用儿童版（推荐）** | 儿童设备订阅填 `.../subs/kids.json` | 15 个源，已剔除 `avdb` / `hohoj` / `pppHub` ✅ |
+| 临时从主订阅去掉 `avdb` | 从 `subs/vod.json`（和 `playable.json`）删掉该条，推送 | 自动流程记为 `manualExclude`，**不会被自动加回来** ✅ |
+| 永久禁用某个源 | 把它加进 `automation/config.json` 的 `blocklist` + `exclude` | 连播放深检都不跑，永不纳入 ✅ |
+| 更新儿童版 | 新可播源出现后跑 `node tools/gen-all.js` | 同时刷新 `all.json` 与 `kids.json` ✅ |
+| 只改一台设备 | 不同设备导入不同订阅（成人设备 `all.json`、儿童设备 `kids.json`） | 互不干扰 ✅ |
 
 > 新源若文件名命中 `config.adultKeywords`（porn / javdb / madou 等）不会被自动纳入；已收录的 `avdb` 不受该规则影响，需按上表手工处理。
 
@@ -224,12 +238,15 @@ xptv-sources/
 │   └── result-<日期>-play.json       当次播放深检原始数据
 ├── subs/
 │   ├── vod.json                     ★ 主订阅：稳定可播（自动收敛）
+│   ├── all.json                     ★ 全部可播（含 18+，名称带标记，手工维护）
+│   ├── kids.json                    ★ 家庭儿童版（剔除 18+，手工维护）
 │   ├── playable.json                与 vod.json 相同，兼容旧链接
 │   └── legacy-8.json                最初的 8 源全量（回退用，不自动改）
-├── js/                              扩展脚本（10 主订阅 + 备用/legacy，自动同步上游）
+├── js/                              扩展脚本（主订阅 + 全量可播，自动同步上游）
 └── tools/
     ├── check.js                     列表可用性检测（B 模式约 150 源全量）
     ├── playcheck.js                 ★ 播放链路深检（列表→剧集→地址→真实拉流）
+    ├── gen-all.js                   ★ 生成 all.json / kids.json
     ├── package.json                 依赖：cheerio + crypto-js
     └── publish.sh                   一键提交推送
 ```
@@ -345,6 +362,14 @@ cd ~/Desktop/xptv-sources
 ./tools/publish.sh                # 默认 xptv-sources
 ```
 
+**★ 刷新全量版 / 儿童版（新增可播源后）**
+```bash
+cd ~/Desktop/xptv-sources
+node tools/gen-all.js              # 用 docs 下最新的 result-*-play.json
+node tools/gen-all.js --dry-run    # 只预览条数，不写文件
+```
+生成 `subs/all.json`（全部可播，18+ 带标记）与 `subs/kids.json`（剔除 18+），再 `./tools/publish.sh` 推送。
+
 **★ 复测播放链路（能发现「有海报但播不了」）**
 ```bash
 cd ~/Desktop/xptv-sources/tools
@@ -443,6 +468,7 @@ cat playcheck-result.json
 | 2026-11-12 | 首次云端自动实跑成功（列表 21 / 可播 13 / 订阅 10 源不变），AUTO 区块已由云端自动刷新并同步回本地 |
 | 2026-11-12 | 升级 **B 全量模式**：自动汇总 4 个上游仓库；首跑 149 脚本 → 列表 35 → 可播 12，新识别 `dmxq` / `duboku` / `zym` 三个可播源，待第二次通过后自动纳入 |
 | 2026-11-12 | 云端二次校验 149 → 列表 37 → 可播 16，自动纳入 `独播库` / `zym` / `huangguo` / `hohoj`，订阅 10 → **14**；复核发现 `hohoj` 为成人向，剔除并加入 `blocklist`/`exclude`，最终 **13 源** |
+| 2026-11-12 | 新增 **`subs/all.json`**：汇总全部 **18 个可播源**（含 `avdb` / `hohoj` / `pppHub` 三个 18+，名称带标记、不隐藏）；同时提供 **`subs/kids.json`**（15 个家庭向）与生成工具 `tools/gen-all.js` |
 
 ---
 

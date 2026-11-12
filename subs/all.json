@@ -1,0 +1,112 @@
+{
+  "sites": [
+    {
+      "name": "anime1",
+      "type": 3,
+      "api": "csp_anime1",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/anime1.js"
+    },
+    {
+      "name": "huya",
+      "type": 3,
+      "api": "csp_huya",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/huya.js"
+    },
+    {
+      "name": "4k-av",
+      "type": 3,
+      "api": "csp_4kav",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/4kav.js"
+    },
+    {
+      "name": "独播库",
+      "type": 3,
+      "api": "csp_duboku",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/duboku.js"
+    },
+    {
+      "name": "zym",
+      "type": 3,
+      "api": "csp_zym",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/zym.js"
+    },
+    {
+      "name": "huangguo",
+      "type": 3,
+      "api": "csp_huangguo",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/huangguo.js"
+    },
+    {
+      "name": "rrmj",
+      "type": 3,
+      "api": "csp_rrmj",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/rrmj.js"
+    },
+    {
+      "name": "农民影视",
+      "type": 3,
+      "api": "csp_wwgz",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/wwgz.js"
+    },
+    {
+      "name": "PPnix",
+      "type": 3,
+      "api": "csp_ppnix",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/ppnix.js"
+    },
+    {
+      "name": "yhdm",
+      "type": 3,
+      "api": "csp_yhdm",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/yhdm.js"
+    },
+    {
+      "name": "dmxq",
+      "type": 3,
+      "api": "csp_dmxq",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/dmxq.js"
+    },
+    {
+      "name": "7sefun",
+      "type": 3,
+      "api": "csp_7sefun",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/7sefun.js"
+    },
+    {
+      "name": "小蘋果",
+      "type": 3,
+      "api": "csp_apple",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/apple.js"
+    },
+    {
+      "name": "kuaikaw",
+      "type": 3,
+      "api": "csp_kuaikaw",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/kuaikaw.js"
+    },
+    {
+      "name": "斗鱼",
+      "type": 3,
+      "api": "csp_douyu",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/douyu.js"
+    },
+    {
+      "name": "avdb | 18+",
+      "type": 3,
+      "api": "csp_avdb",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/avdb.js"
+    },
+    {
+      "name": "hohoj | 18+",
+      "type": 3,
+      "api": "csp_hohoj",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/hohoj.js"
+    },
+    {
+      "name": "pppHub | 18+",
+      "type": 3,
+      "api": "csp_ppron",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/ppp.js"
+    }
+  ]
+}

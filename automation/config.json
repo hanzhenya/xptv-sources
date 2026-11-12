@@ -55,6 +55,7 @@
     "mihdr",
     "yunpanres",
     "hohoj",
+    "ppp",
     "labipan",
     "leijing",
     "ouge",
@@ -78,6 +79,7 @@
     "mihdr": "网盘源",
     "yunpanres": "网盘源",
     "hohoj": "日本成人视频站（分类含无码/有码/欧美），家庭过滤必须排除",
+    "ppp": "ppp.porn 成人站；仅保留在手工维护的 subs/all.json，不进主订阅",
     "labipan": "网盘源（PAN）",
     "leijing": "网盘源（PAN）",
     "ouge": "网盘源（PAN）",
@@ -96,7 +98,7 @@
     "EXPORNTOONS", "KoreaPornMovie", "SpankBang", "SupJav", "beeg", "javmove", "javxx",
     "kanav", "madoucun", "missav", "pomo", "pppPorn", "rou", "rousp", "taiav", "xpanpan",
     "aomi", "mitaotun", "muou", "naixxzy", "taozi", "tgs_xp", "uua", "wogg", "xsjyy",
-    "jable", "hanime", "EXPORNTOONS", "hkdoll", "hohoj", "huangpian", "hhsp"
+    "jable", "hanime", "EXPORNTOONS", "hkdoll", "hohoj", "huangpian", "hhsp", "ppp"
   ],
 
   "_adult_note": "新源文件名命中这些关键词时不自动纳入（已收录的 avdb 不受影响）。家庭内容过滤用。",
@@ -105,6 +107,9 @@
     "kbjfan", "javdb", "91jav", "91_vod", "ph_vod", "xh_vod", "gay", "madou",
     "jav", "spank", "beeg", "hentai", "xxx", "sex", "pornmovie"
   ],
+
+  "_adultSites_note": "手工维护的 subs/all.json 生成时，用于打 18+ 标记并排除在 kids.json 之外（不影响主订阅）。",
+  "adultSites": ["avdb", "hohoj", "ppp", "madou"],
 
   "_pan_note": "命中这些词的新源判定为网盘类，跳过播放深检（已收录源不受影响）。",
   "panKeywords": ["line-pan", "_pan", "yunpan", "quark", "alist", "xiaoya", "labipan", "mucpan", "seedhub"],
