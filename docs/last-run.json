@@ -1,9 +1,9 @@
 {
-  "runAt": "2026-11-12T07:28:09.408Z",
-  "beijingTime": "2026-11-12 15:16",
-  "mode": "live",
+  "runAt": "2026-11-12T07:41:37.959Z",
+  "beijingTime": "2026-11-12 15:41",
+  "mode": "offline",
   "upstreamTotal": 149,
-  "upstreamRepos": 4,
+  "upstreamRepos": 0,
   "listOk": 38,
   "playOk": 15,
   "candidates": [
@@ -29,25 +29,7 @@
     "zxzj",
     "zym"
   ],
-  "skippedPlay": [
-    "EXPORNTOONS",
-    "KoreaPornMovie",
-    "alist_tvbox",
-    "alist_xiaoya",
-    "beeg",
-    "avtoday",
-    "hkdoll",
-    "hohoj",
-    "madou",
-    "missav",
-    "naixxzy",
-    "pomo",
-    "pppPorn",
-    "pornhub",
-    "seedhub",
-    "xhamster",
-    "xsjyy"
-  ],
+  "skippedPlay": [],
   "included": [
     "anime1",
     "avdb",
@@ -62,18 +44,15 @@
     "duboku",
     "zym",
     "huangguo",
-    "ppp",
     "yhdm"
   ],
-  "added": [
-    "pppHub",
-    "yhdm"
-  ],
+  "added": [],
   "removed": [],
   "skipped": [
     "4kav(排除名单)",
     "madou(排除名单)",
-    "hohoj(已手工移除)"
+    "hohoj(已手工移除)",
+    "ppp(已手工移除)"
   ],
   "suspicious": false,
   "aborted": false,

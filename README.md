@@ -6,7 +6,7 @@
 >
 > **2026-11-12 第二次全量重检**：把上游 72 个源全部重跑一遍，并首次对所有候选源做了**播放链路深检**（取列表 → 取剧集 → 取播放地址 → 真实拉流）。主订阅从原先的「8 个能出列表」收敛为 **10 个复验稳定可播**的源。详见 [检测报告](docs/播放链路检测报告.md)。
 >
-> **2026-11-12 起升级为 B 全量模式**：每日自动汇总 **4 个上游仓库、约 150 个去重脚本**，不再局限于那 72 个；列表层全量检测，播放深检按成人/网盘规则过滤后，再靠「连续 2 天可播」阈值收敛订阅。**首轮已把主订阅从 10 扩到 13 个**（另剔除 1 个自动混入的成人向源）。详见 [B 全量扩源模式](#b-全量扩源模式)。
+> **2026-11-12 起升级为 B 全量模式**：每日自动汇总 **4 个上游仓库、约 150 个去重脚本**，不再局限于那 72 个；列表层全量检测，播放深检按成人/网盘规则过滤后，再靠「连续 2 天可播」阈值收敛订阅。**主订阅已从 10 扩到 14 个**（另剔除 2 个自动混入的成人向源 `hohoj`、`pppHub`）。详见 [B 全量扩源模式](#b-全量扩源模式)。
 
 ## 一分钟上手
 
@@ -52,25 +52,24 @@
 <!-- AUTO:BEGIN -->
 > 🤖 本节由 `automation/auto-collect.js` 自动生成，**请勿手工编辑**（每天北京时间 03:00 更新）。
 
-**最近自动检测**：2026-11-12 15:16（北京时间） · 4 个上游仓库 / 上游 149 源 → 列表可用 38 → 播放可播 15 → 主订阅 **15 源** · 本次新增：pppHub、yhdm · 移除：无 · 成人/网盘过滤 17 个
+**最近自动检测**：2026-11-12 15:41（北京时间） · 离线复算 · 上游 149 源 → 列表可用 38 → 播放可播 15 → 主订阅 **14 源** · 本次新增：无 · 移除：无
 
 | 源名 | api | 流格式 | 列表条数 | 连续通过 | 状态 |
 |---|---|:---:|---:|:---:|:---:|
-| anime1 | `csp_anime1` | mp4 | 1964 | 8 天 | ✅ |
-| avdb | `csp_avdb` | m3u8 | 100 | 8 天 | ✅ |
-| PPnix | `csp_ppnix` | m3u8 | 24 | 8 天 | ✅ |
-| 农民影视 | `csp_wwgz` | m3u8 | 30 | 4 天 | ✅ |
-| 小蘋果 | `csp_apple` | m3u8 | 20 | 8 天 | ✅ |
-| 7sefun | `csp_7sefun` | mp4 | 20 | 8 天 | ✅ |
-| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 1 天 | ✅ |
-| rrmj | `csp_rrmj` | mp4 | 30 | 8 天 | ✅ |
+| anime1 | `csp_anime1` | mp4 | 1964 | 9 天 | ✅ |
+| avdb | `csp_avdb` | m3u8 | 100 | 9 天 | ✅ |
+| PPnix | `csp_ppnix` | m3u8 | 24 | 9 天 | ✅ |
+| 农民影视 | `csp_wwgz` | m3u8 | 30 | 5 天 | ✅ |
+| 小蘋果 | `csp_apple` | m3u8 | 20 | 9 天 | ✅ |
+| 7sefun | `csp_7sefun` | mp4 | 20 | 9 天 | ✅ |
+| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 2 天 | ✅ |
+| rrmj | `csp_rrmj` | mp4 | 30 | 9 天 | ✅ |
 | huya | `csp_huya` | flv | 120 | 0 天 | ✅ |
-| 斗鱼 | `csp_douyu` | flv | 8 | 8 天 | ✅ |
-| 独播库 | `csp_duboku` | m3u8 | 48 | 4 天 | ✅ |
-| zym | `csp_zym` | m3u8 | 40 | 4 天 | ✅ |
-| huangguo | `csp_huangguo` | m3u8 | 34 | 4 天 | ✅ |
-| pppHub | `csp_ppron` | m3u8 | 24 | 3 天 | ✅ |
-| yhdm | `csp_yhdm` | m3u8 | 24 | 3 天 | ✅ |
+| 斗鱼 | `csp_douyu` | flv | 8 | 9 天 | ✅ |
+| 独播库 | `csp_duboku` | m3u8 | 48 | 5 天 | ✅ |
+| zym | `csp_zym` | m3u8 | 40 | 5 天 | ✅ |
+| huangguo | `csp_huangguo` | m3u8 | 34 | 5 天 | ✅ |
+| yhdm | `csp_yhdm` | m3u8 | 24 | 4 天 | ✅ |
 
 > 详细归因见 `docs/last-run.json` 与 `docs/result-<日期>-play.json`；手动复测命令见下方「常用操作」。
 <!-- AUTO:END -->
@@ -83,8 +82,8 @@
 |---|---:|---|
 | **全量可播（含 18+）** — 成年人自己用 | **18** | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/all.json` |
 | **家庭儿童版** — 电视 / 孩子设备推荐 | **15** | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/kids.json` |
-| 主订阅 — 自动维护，含 `avdb` 成人向 | 13 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json` |
-| 与主订阅相同（兼容旧链接） | 13 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/playable.json` |
+| 主订阅 — 自动维护，含 `avdb` 成人向 | 14 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json` |
+| 与主订阅相同（兼容旧链接） | 14 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/playable.json` |
 | 回退用：最初的 8 源全量 | 8 | `https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/legacy-8.json` |
 
 **三种版本怎么选**
@@ -97,7 +96,7 @@
 
 > ✅ `hanzhenya/xptv-sources` 是**公开仓库**、`main` 分支。所有订阅配置与 js 均按线上 URL 匿名访问验证（HTTP 200、内容与本地逐字节一致），并下载后沙箱实跑复验。
 >
-> ⚠️ 同一个 XPTV 里**不要同时导入** `all.json` 和 `vod.json`：两者有 13 个重叠源，会出现重复条目。按设备选一个即可。
+> ⚠️ 同一个 XPTV 里**不要同时导入** `all.json` 和 `vod.json`：两者有 14 个重叠源，会出现重复条目。按设备选一个即可。
 >
 > 改完任何文件执行 `./tools/publish.sh` 即可更新，XPTV 端刷新订阅生效。
 >
@@ -144,7 +143,7 @@
 
 ## 主订阅收录的源
 
-> 当前 **13 个**。B 全量模式生效后新纳入 `独播库`、`zym`、`huangguo` 三个；自动纳入的成人向 `hohoj` 已剔除并加入 `blocklist`/`exclude`（详见[家庭内容过滤](#家庭内容过滤)）。
+> 当前 **14 个**（会随每日自动检测微调，最新数字以页首 AUTO 区块为准）。B 全量模式生效后新纳入 `独播库`、`zym`、`huangguo`、`yhdm` 四个；自动混入的成人向 `hohoj`、`pppHub` 已剔除并加入 `blocklist`/`exclude`（详见[家庭内容过滤](#家庭内容过滤)）。完整 **18 个**可播源（含 18+）见 `subs/all.json`。
 
 全部按「线上 URL 下载 → XPTV 运行时沙箱 → 拉流校验通过」确认，并在**项目最终目录**再复验一次。`api` 命名沿用仓库既有体系（从 `subs/vod.json`、`subs/18.json`、`subs/pan.json` 反查；未收录的按 `csp_<文件名>`），**不要随意改**，对不上会导致 XPTV 加载不出源。
 
@@ -163,6 +162,7 @@
 | 独播库 | `csp_duboku` | 48 | m3u8 | **B 模式新增**；正规影视站，分片 `0x47` |
 | zym | `csp_zym` | 40 | m3u8 | **B 模式新增**；weisiwang，电影/剧集/动漫/综艺 |
 | huangguo | `csp_huangguo` | 34 | m3u8 | **B 模式新增**；黄果短剧（脚本已混淆） |
+| yhdm | `csp_yhdm` | 24 | m3u8 | **B 模式新增**；樱花动漫，正规番剧 |
 
 ## 家庭内容过滤
 
@@ -178,15 +178,22 @@
 
 > 新源若文件名命中 `config.adultKeywords`（porn / javdb / madou 等）不会被自动纳入；已收录的 `avdb` 不受该规则影响，需按上表手工处理。
 
-**真实案例：`hohoj` 被自动纳入后剔除（2026-11-12）**
+**真实案例：两个成人源被自动混入后剔除（2026-11-12）**
 
-B 模式首跑时 `hohoj`（hohoj.tv）通过播放深检并被自动加入订阅，随后检查脚本发现其分类为「无码 / 有码 / 欧美 / 中字」——是日本成人视频站。处理方式：
+| 源 | 站点 | 判定依据 | 结果 |
+|---|---|---|---|
+| `hohoj` | hohoj.tv | 分类含「无码 / 有码 / 欧美 / 中字」 | 已从主订阅剔除，脚本保留供 `all.json` 使用 |
+| `pppHub` | ppp.porn | 域名与源码含 `porn` | 已从主订阅剔除，脚本保留供 `all.json` 使用 |
 
-1. 从 `subs/vod.json`、`subs/playable.json` 删除该条，删除 `js/hohoj.js`；
-2. 加入 `config.blocklist` 与 `config.exclude`，此后**连播放深检都不会跑**，更不会自动回来；
-3. 重新收敛，订阅从 14 回到 13。
+处理三步：
 
-> ⚠️ 这说明「能播」不等于「适合家里看」。扩展源越多，越要偶尔翻一下订阅清单；发现漏网源按上面三步处理即可。
+1. 从 `subs/vod.json`、`subs/playable.json` 删除该条（**已收录源不会被 `exclude` 自动回溯删除**，必须手工删）；
+2. 加入 `config.blocklist` 与 `config.exclude`，此后**连播放深检都不会跑**，不会再自动进主订阅；
+3. `node automation/auto-collect.js --from-list ... --from-play ...` 重新收敛，主订阅回到 14。
+
+> 📌 这两个脚本**没有删掉**，而是保留在 `js/` 里，只服务于手工维护的 `subs/all.json`（成年人设备）。主订阅和 `kids.json` 都不含它们。
+>
+> ⚠️ 「能播」不等于「适合家里看」。扩展源越多，越要偶尔翻一下订阅清单；发现漏网源按上面三步处理即可。
 
 ## 未纳入主订阅的源及原因
 
@@ -301,7 +308,7 @@ xptv-sources/
 > ✅ 扩源有效：确实多识别出 3 个可播源（`dmxq` 24 条 m3u8、`duboku` 48 条 m3u8、`zym` 40 条 m3u8）。
 > ⏳ 首跑订阅数不变是**正常的防抖动行为**，不是没生效：下一次检测仍可播就会自动写进 `subs/vod.json`，无需手工加。
 
-**同日云端二次校验**（push 自动触发，境外视角）：149 源 → 列表 **37** → 可播 **16** → 自动纳入 `独播库`、`zym`、`huangguo`、`hohoj` → 订阅 **13 源**（`hohoj` 因成人向在复核后剔除，见[家庭内容过滤](#家庭内容过滤)）。境内/境外视角结论略有差异，但「源池变大 → 可播候选变多」的方向一致。
+**同日云端二次校验**（push 自动触发，境外视角）：149 源 → 列表 **37** → 可播 **16** → 自动纳入 `独播库`、`zym`、`huangguo`、`hohoj`；再下一轮又纳入 `pppHub`、`yhdm`。复核后剔除 `hohoj`、`pppHub` 两个成人向源，最终主订阅 **14 源**（见[家庭内容过滤](#家庭内容过滤)）。境内/境外视角结论略有差异，但「源池变大 → 可播候选变多」的方向一致。
 
 **调整范围**：把 `config.upstreams` 里某条 `enabled` 改成 `false` 即可退回单仓库；加新仓库按同格式加一条即可，**workflow 会自动循环 clone，不用改 YAML**。放宽/收紧过滤改 `blocklist` / `adultKeywords` / `panKeywords`，改完 `./tools/publish.sh` 推送生效。
 
@@ -467,7 +474,7 @@ cat playcheck-result.json
 | 2026-11-12 | 本页升级为**说明帮助文档**：一分钟上手、文档导航、订阅字段说明、家庭内容过滤、FAQ 故障排查、更新日志；随本次提交推送上线 |
 | 2026-11-12 | 首次云端自动实跑成功（列表 21 / 可播 13 / 订阅 10 源不变），AUTO 区块已由云端自动刷新并同步回本地 |
 | 2026-11-12 | 升级 **B 全量模式**：自动汇总 4 个上游仓库；首跑 149 脚本 → 列表 35 → 可播 12，新识别 `dmxq` / `duboku` / `zym` 三个可播源，待第二次通过后自动纳入 |
-| 2026-11-12 | 云端二次校验 149 → 列表 37 → 可播 16，自动纳入 `独播库` / `zym` / `huangguo` / `hohoj`，订阅 10 → **14**；复核发现 `hohoj` 为成人向，剔除并加入 `blocklist`/`exclude`，最终 **13 源** |
+| 2026-11-12 | 云端二次校验 149 → 列表 37 → 可播 16，自动纳入 `独播库` / `zym` / `huangguo` / `hohoj`；下一轮又纳入 `pppHub` / `yhdm`。复核发现 `hohoj`、`pppHub` 为成人向，剔除并加入 `blocklist`/`exclude`，主订阅最终 **14 源** |
 | 2026-11-12 | 新增 **`subs/all.json`**：汇总全部 **18 个可播源**（含 `avdb` / `hohoj` / `pppHub` 三个 18+，名称带标记、不隐藏）；同时提供 **`subs/kids.json`**（15 个家庭向）与生成工具 `tools/gen-all.js` |
 
 ---
