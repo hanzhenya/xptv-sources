@@ -4,6 +4,31 @@
 
 > **2026-11-12 第二次全量重检**：把上游仓库 `js/` 下 **72 个源**全部重跑一遍，并首次对所有候选源做了**播放链路深检**（取列表 → 取剧集 → 取播放地址 → 真实拉流）。主订阅已从原先的「8 个能出列表」收敛为 **10 个复验稳定可播**的源。详见 [检测报告](docs/播放链路检测报告.md)。
 
+## 自动同步状态
+
+每天**北京时间凌晨 03:00**，GitHub Actions 会自动从上游 GitHub 仓库收集全部扩展源，跑「列表检测 → 播放深检」，把确认可播的源收敛进本项目并推送。详细机制见 [每日自动收集](#每日自动收集)。
+
+<!-- AUTO:BEGIN -->
+> 🤖 本节由 `automation/auto-collect.js` 自动生成，**请勿手工编辑**（每天北京时间 03:00 更新）。
+
+**最近自动检测**：2026-11-12 12:46（北京时间） · 离线复算 · 上游 72 源 → 列表可用 20 → 播放可播 11 → 主订阅 **10 源** · 本次新增：无 · 移除：无
+
+| 源名 | api | 流格式 | 列表条数 | 连续通过 | 状态 |
+|---|---|:---:|---:|:---:|:---:|
+| anime1 | `csp_anime1` | mp4 | 1964 | 3 天 | ✅ |
+| avdb | `csp_avdb` | m3u8 | 100 | 3 天 | ✅ |
+| PPnix | `csp_ppnix` | m3u8 | 24 | 3 天 | ✅ |
+| 农民影视 | `csp_wwgz` | m3u8 | 30 | 3 天 | ✅ |
+| 小蘋果 | `csp_apple` | m3u8 | 20 | 3 天 | ✅ |
+| 7sefun | `csp_7sefun` | mp4 | 20 | 3 天 | ✅ |
+| kuaikaw | `csp_kuaikaw` | mp4 | 10 | 3 天 | ✅ |
+| rrmj | `csp_rrmj` | mp4 | 30 | 3 天 | ✅ |
+| huya | `csp_huya` | flv | 120 | 3 天 | ✅ |
+| 斗鱼 | `csp_douyu` | flv | 8 | 3 天 | ✅ |
+
+> 详细归因见 `docs/last-run.json` 与 `docs/result-<日期>-play.json`；手动复测命令见下方「常用操作」。
+<!-- AUTO:END -->
+
 ## 导入方法
 
 在 XPTV 设置 → 订阅配置里填入下面任一地址（或导入本地同名文件）：
@@ -91,22 +116,87 @@
 
 ```
 xptv-sources/
-├── README.md                        本说明
+├── README.md                        本说明（含 AUTO 自动区块）
+├── .github/workflows/
+│   └── daily-sync.yml               ★ 每日 03:00 定时任务
+├── automation/
+│   ├── config.json                  ★ 上游、排除名单、修复版、收录阈值
+│   └── auto-collect.js              ★ 自动收集主程序
 ├── docs/
-│   ├── 播放链路检测报告.md            ★ 全量检测结论、归因、修复记录
-│   ├── result-2026-11-12-list.json   72 源列表检测原始数据
-│   └── result-2026-11-12-play.json   21 源播放深检原始数据
+│   ├── 播放链路检测报告.md            全量检测结论、归因、修复记录
+│   ├── state.json                   跨天累计命中/失败次数（自动维护）
+│   ├── last-run.json                最近一次运行摘要（自动维护）
+│   ├── result-2026-11-12-list.json  72 源列表检测原始数据
+│   └── result-2026-11-12-play.json  21 源播放深检原始数据
 ├── subs/
-│   ├── vod.json                     ★ 主订阅：10 个稳定可播（推荐）
+│   ├── vod.json                     ★ 主订阅：稳定可播（自动收敛）
 │   ├── playable.json                与 vod.json 相同，兼容旧链接
-│   └── legacy-8.json                最初的 8 源全量（回退用）
-├── js/                              14 个扩展脚本（10 主订阅 + 4 备用/legacy）
+│   └── legacy-8.json                最初的 8 源全量（回退用，不自动改）
+├── js/                              扩展脚本（10 主订阅 + 备用/legacy，自动同步上游）
 └── tools/
     ├── check.js                     列表可用性检测（72 源全量）
     ├── playcheck.js                 ★ 播放链路深检（列表→剧集→地址→真实拉流）
     ├── package.json                 依赖：cheerio + crypto-js
     └── publish.sh                   一键提交推送
 ```
+
+## 每日自动收集
+
+**不用管它，每天自动跑。** 工作流在 `.github/workflows/daily-sync.yml`：
+
+| 项 | 值 |
+|---|---|
+| 定时 | 每天 **北京时间 03:00**（UTC 19:00，cron `0 19 * * *`） |
+| 触发方式 | 定时 / 网页手动 **Run workflow** / 改动 `automation/**` 时自动验证一次 |
+| 运行位置 | GitHub 云端 `ubuntu-latest`，**不依赖你的 Mac 开机** |
+| 推送凭据 | Actions 自带 `GITHUB_TOKEN`，绕开本机已失效的 API token |
+
+### 每天做什么
+
+1. `git clone --depth=1` 上游 `hanzhenya/xptv-extensions`，取全部 `js/` 扩展源
+2. 组装检测目录：上游全量 ＋ 项目独有 ＋ **本地修复版优先覆盖**
+3. `tools/check.js` 跑列表层（`getConfig` + `getCards` 真实请求）
+4. 对「列表可用源 ＋ 已收录源」跑 `tools/playcheck.js` 播放链路深检（取剧集 → 播放地址 → 真实拉流校验）
+5. 按 `automation/config.json` 收敛 `subs/vod.json` / `playable.json` / `js/`
+6. 写 `docs/state.json`（累计命中）、`docs/last-run.json`（本次摘要）、`docs/result-<日期>-{list,play}.json`（原始数据）
+7. 重写本页 AUTO 自动区块；**有文件变化才**用 `[auto-sync]` 前缀提交推送（自动提交不会再次触发工作流）
+
+> ✅ **部署的就是测过的**：脚本把检测用的 js 复制进 `js/`，避免「测上游版、设备跑旧版」。本地修复版（`anime1` / `wwgz` / `4kav`）列在 `config.pinned`，**永不被上游覆盖**。
+
+### 收录规则（防抖动）
+
+| 规则 | 默认 | 含义 |
+|---|---|---|
+| `minHitsToAdd` | 2 | 新源要**连续 2 天**播放深检通过才进主订阅 |
+| `maxMissesToRemove` | 3 | 已收录源**连续 3 天**失败才移除 |
+| `minKeepRatio` | 0.5 | 单次可播数低于已有收录数一半 → 判定「检测环境异常」，**只增不删** |
+| `minAbsoluteOk` | 3 | 可播数为 0 → **完全不动**订阅 |
+
+`config.exclude` 里的源（网盘类、站点改版、成人向不稳定）永不自动纳入；`adultKeywords` 命中的新源也会被过滤（**已收录的 `avdb` 不受影响**）。手工从 `vod.json` 删掉的源会被记为 `manualExclude`，不会被自动加回来，家庭内容过滤的改动能一直保留。
+
+### 改配置 / 手动运行
+
+编辑 `automation/config.json` 后 `./tools/publish.sh` 推送即生效。
+
+- **改时间**：改 workflow 的 cron（GitHub 一律用 UTC）。想改北京时间 06:00 → `0 22 * * *`
+- **暂停**：仓库 → Actions → `XPTV 每日自动收集` → **Disable workflow**
+- **立即跑一次**：Actions 页点 **Run workflow**；勾 `dry_run` 则只输出结论、不写文件不提交
+- **加更多上游仓库**：`config.upstreams` 里预留了 `Yswag/xptv-extensions`（`enabled: false`），启用时还需在 workflow 里增加一次 clone 并合并 `js/`
+- **本地手动跑完整流程**（用你自己的网络视角定稿）：
+  ```bash
+  git clone --depth=1 https://github.com/hanzhenya/xptv-extensions.git /tmp/upstream
+  cd ~/Desktop/xptv-sources/tools && npm install
+  cd ..
+  node automation/auto-collect.js \
+    --upstream-dir /tmp/upstream/js --subs-dir /tmp/upstream/subs --dry-run
+  ```
+  去掉 `--dry-run` 才实际写文件，再 `./tools/publish.sh` 推送。离线复算可加 `--from-list <json> --from-play <json>`。
+
+### ⚠️ 一个必须知道的差异
+
+GitHub Actions 的机器在**境外**，网络视角与你家里的 XPTV（境内直连）不完全一样：某些境内可播的站在 CI 里可能超时，某些境内被墙的站在 CI 里反而能通。安全阀（只增不删 / 归零不动）正是为此设计——**最坏情况是订阅「没变好」，绝不会「被清空」**。要按家里网络定稿，本地跑一次上面的命令即可。
+
+> GitHub 的 `schedule` 在整点高峰可能延迟几分钟；连续 60 天仓库无任何活动会暂停定时任务，本项目每天都有提交，不会触发。
 
 ## 常用操作
 
@@ -141,4 +231,5 @@ TIMEOUT=12000 node check.js /path/to/xptv-extensions/js   # 上游全量 72 源
 - 📺 **直播源**（huya / 斗鱼）地址带时效签名，单次检测结果会波动。
 - 🛡️ **4k-av** 有反爬限流，刷列表过频会临时 403。
 - 📦 **网盘源**需外部网盘 App / 解析，XPTV 播放器无法直放。
-- 📌 上游 Yswag 的修复不会自动同步；如需跟进，手动对比 `js/` 下同名文件即可。
+- 🤖 上游同名脚本**每天 03:00 自动同步**（见[每日自动收集](#每日自动收集)），但 `config.pinned` 里的 3 个本地修复版不会被覆盖。
+- 🔧 想永久禁用某个源，把它加进 `automation/config.json` 的 `exclude`；只想临时去掉，直接从 `subs/vod.json` 删掉即可（自动流程会尊重手工删除）。

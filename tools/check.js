@@ -360,7 +360,10 @@ async function main() {
     }
   }
   await Promise.all(Array.from({ length: CONC }, worker))
-  fs.writeFileSync('/tmp/iptvcheck/result.json', JSON.stringify(out, null, 2))
+  // 输出路径可配置，供 automation/auto-collect.js 在 CI 中复用
+  const outFile = process.env.CHECK_OUT || '/tmp/iptvcheck/result.json'
+  fs.mkdirSync(path.dirname(outFile), { recursive: true })
+  fs.writeFileSync(outFile, JSON.stringify(out, null, 2))
   console.log('\n=== 汇总 ===')
   const g = {}
   out.forEach(r => { g[r.status] = (g[r.status] || 0) + 1 })

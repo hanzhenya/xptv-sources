@@ -1,0 +1,76 @@
+name: XPTV 每日自动收集
+
+# 北京时间凌晨 03:00 = UTC 19:00（GitHub Actions 的 cron 一律用 UTC）
+# 另有：手动触发（可勾 dry-run 只检测不写入）、改动自动化配置时自动验证一次
+on:
+  schedule:
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只检测、不写入文件（用于验证）'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'automation/**'
+      - '.github/workflows/daily-sync.yml'
+
+concurrency:
+  group: xptv-daily-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    # 自动同步产生的提交不重复触发；自动提交也不会命中上面的 paths，这里是双保险
+    if: github.event_name != 'push' || !contains(toJSON(github.event.head_commit.message), '[auto-sync]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出自建项目
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 准备 Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: tools/package-lock.json
+
+      - name: 安装检测依赖
+        working-directory: tools
+        run: npm ci --no-audit --no-fund
+
+      - name: 克隆上游源仓库
+        run: |
+          rm -rf /tmp/upstream
+          git clone --depth=1 --branch main \
+            https://github.com/hanzhenya/xptv-extensions.git /tmp/upstream
+          echo "上游源文件数: $(ls /tmp/upstream/js/*.js | wc -l)"
+
+      - name: 自动收集与收敛
+        run: |
+          EXTRA=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then EXTRA="--dry-run"; fi
+          node automation/auto-collect.js \
+            --upstream-dir /tmp/upstream/js \
+            --subs-dir /tmp/upstream/subs $EXTRA
+
+      - name: 提交并推送变更
+        if: inputs.dry_run != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "本次无文件变更，跳过提交"
+            exit 0
+          fi
+          git commit -m "[auto-sync] $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M') 自动检测更新"
+          git push origin main

@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "sources": {
+    "anime1": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "anime1",
+      "api": "csp_anime1",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "mp4",
+      "listCount": 1964,
+      "lastDetail": "mp4 流可播 (ftyp)"
+    },
+    "avdb": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "avdb",
+      "api": "csp_avdb",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "m3u8",
+      "listCount": 100,
+      "lastDetail": "清单+分片可播 (分片 9968B)"
+    },
+    "ppnix": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "PPnix",
+      "api": "csp_ppnix",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "m3u8",
+      "listCount": 24,
+      "lastDetail": "清单+分片可播 (分片 65536B)"
+    },
+    "wwgz": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "农民影视",
+      "api": "csp_wwgz",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "m3u8",
+      "listCount": 30,
+      "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
+    },
+    "apple": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "小蘋果",
+      "api": "csp_apple",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "m3u8",
+      "listCount": 20,
+      "lastDetail": "清单+分片可播 (分片 65536B, TS 0x47)"
+    },
+    "7sefun": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "7sefun",
+      "api": "csp_7sefun",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "mp4",
+      "listCount": 20,
+      "lastDetail": "mp4 流可播 (ftyp)"
+    },
+    "kuaikaw": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "kuaikaw",
+      "api": "csp_kuaikaw",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "mp4",
+      "listCount": 10,
+      "lastDetail": "mp4 流可播 (ftyp)"
+    },
+    "rrmj": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "rrmj",
+      "api": "csp_rrmj",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "mp4",
+      "listCount": 30,
+      "lastDetail": "mp4 流可播 (ftyp)"
+    },
+    "huya": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "huya",
+      "api": "csp_huya",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "flv",
+      "listCount": 120,
+      "lastDetail": "FLV 直播流可播 (FLV header)"
+    },
+    "douyu": {
+      "hits": 3,
+      "misses": 0,
+      "included": true,
+      "name": "斗鱼",
+      "api": "csp_douyu",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "flv",
+      "listCount": 8,
+      "lastDetail": "FLV 直播流可播 (FLV header)"
+    },
+    "4kav": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "4k-av",
+      "api": "csp_4kav",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getCards",
+      "lastDetail": "列表为空 / 异常: ERR_INVALID_URL"
+    },
+    "alist_tvbox": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "AList-TvBox",
+      "api": "csp_TvBox",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 抛异常: ERR_INVALID_URL"
+    },
+    "alist_xiaoya": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "小雅AList",
+      "api": "csp_xiaoya",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 抛异常: ERR_INVALID_URL"
+    },
+    "czzy": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "czzy",
+      "api": "csp_czzy",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit"
+    },
+    "hdmoli": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "hdmoli",
+      "api": "csp_hdmoli",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 抛异常: ENOTFOUND"
+    },
+    "lmm85": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "lmm85",
+      "api": "csp_lmm85",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}"
+    },
+    "madou": {
+      "hits": 1,
+      "misses": 0,
+      "included": false,
+      "name": "麻豆社",
+      "api": "csp_madou",
+      "lastOk": "2026-11-12 12:46",
+      "mediaType": "m3u8",
+      "listCount": 20,
+      "lastDetail": "清单+分片可播 (分片 65536B)"
+    },
+    "novipnoad": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "NO視頻",
+      "api": "csp_novipnoad",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}"
+    },
+    "symx": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "symx",
+      "api": "csp_symx",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "getPlayinfo",
+      "lastDetail": "getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"User-Agent\":\"SYMX_ANDROID\",\"x-platform\":\"android\",\"cookie\":\"server"
+    },
+    "yydsys": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "多多影音",
+      "api": "csp_yydsys",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "pan",
+      "lastDetail": "网盘源：track 只有 pan 跳转链接，源设计上不返回播放流"
+    },
+    "zxzj": {
+      "hits": 0,
+      "misses": 1,
+      "included": false,
+      "name": "zxzj",
+      "api": "csp_zxzj",
+      "lastFail": "2026-11-12 12:46",
+      "lastStage": "stream",
+      "lastDetail": "返回 HTML 而非视频（多为防盗链/需登录/地址失效）"
+    }
+  },
+  "lastRun": "2026-11-12 12:46"
+}

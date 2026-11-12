@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "_readme": "每日自动收集配置。修改后推送到 main 即生效；GitHub Actions 每天北京时间 03:00 运行。",
+
+  "upstreams": [
+    {
+      "repo": "https://github.com/hanzhenya/xptv-extensions.git",
+      "branch": "main",
+      "jsPath": "js",
+      "subsPath": "subs",
+      "enabled": true
+    },
+    {
+      "repo": "https://github.com/Yswag/xptv-extensions.git",
+      "branch": "main",
+      "jsPath": "js",
+      "subsPath": "subs",
+      "enabled": false,
+      "_note": "上游原仓库。如需同时收集，把 enabled 改成 true 并在 workflow 里增加一次 clone（见 README 自动化章节）"
+    }
+  ],
+
+  "rawBase": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main",
+
+  "_pinned_note": "本地修复版，自动收集时永不被上游同名文件覆盖",
+  "pinned": ["anime1", "wwgz", "4kav"],
+
+  "_exclude_note": "永不自动纳入主订阅的源（脚本仍可留在 js/ 里手动启用）。exclude 只影响「新纳入」，不会删除已收录的源。",
+  "exclude": [
+    "hdmoli",
+    "yydsys",
+    "madou",
+    "4kav",
+    "alist_tvbox",
+    "alist_xiaoya",
+    "nanfdj",
+    "mihdr",
+    "yunpanres"
+  ],
+  "excludeReason": {
+    "hdmoli": "站点已转纯网盘下载站，无在线播放器",
+    "yydsys": "设计上就是网盘源，getPlayinfo 返回空地址",
+    "madou": "拉流连续超时 + 成人向",
+    "4kav": "站点间歇性整体 403 反爬，源逻辑本身正确",
+    "alist_tvbox": "需自备 AList 服务端地址",
+    "alist_xiaoya": "需自备 AList 服务端地址",
+    "nanfdj": "网盘源",
+    "mihdr": "网盘源",
+    "yunpanres": "网盘源"
+  },
+
+  "_adult_note": "新源文件名命中这些关键词时不自动纳入（已收录的 avdb 不受影响）。家庭内容过滤用。",
+  "adultKeywords": [
+    "porn", "xhamster", "hanime", "hkdoll", "avtoday", "taohuazu", "hdys",
+    "kbjfan", "javdb",     "91jav", "91_vod", "ph_vod", "xh_vod", "gay", "madou"
+  ],
+
+  "thresholds": {
+    "minHitsToAdd": 2,
+    "maxMissesToRemove": 3,
+    "minKeepRatio": 0.5,
+    "minAbsoluteOk": 3,
+    "_note": "新源需连续 2 天播放深检通过才纳入；已收录源连续 3 天失败才移除；当本次可播数低于已有收录数的一半时判定为「检测环境异常」，只增不删。"
+  },
+
+  "timeoutMs": 15000,
+  "listTimeoutMs": 12000
+}
