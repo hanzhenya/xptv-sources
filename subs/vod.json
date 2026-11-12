@@ -77,6 +77,18 @@
       "type": 3,
       "api": "csp_huangguo",
       "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/huangguo.js"
+    },
+    {
+      "name": "pppHub",
+      "type": 3,
+      "api": "csp_ppron",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/ppp.js"
+    },
+    {
+      "name": "yhdm",
+      "type": 3,
+      "api": "csp_yhdm",
+      "ext": "https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/js/yhdm.js"
     }
   ]
 }

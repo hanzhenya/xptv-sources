@@ -1,11 +1,11 @@
 {
-  "runAt": "2026-11-12T07:14:10.771Z",
-  "beijingTime": "2026-11-12 15:14",
-  "mode": "offline",
+  "runAt": "2026-11-12T07:28:09.408Z",
+  "beijingTime": "2026-11-12 15:16",
+  "mode": "live",
   "upstreamTotal": 149,
-  "upstreamRepos": 0,
-  "listOk": 37,
-  "playOk": 16,
+  "upstreamRepos": 4,
+  "listOk": 38,
+  "playOk": 15,
   "candidates": [
     "4kav",
     "7sefun",
@@ -15,7 +15,6 @@
     "douyu",
     "duboku",
     "hdmoli",
-    "hohoj",
     "huangguo",
     "huya",
     "kuaikaw",
@@ -30,7 +29,25 @@
     "zxzj",
     "zym"
   ],
-  "skippedPlay": [],
+  "skippedPlay": [
+    "EXPORNTOONS",
+    "KoreaPornMovie",
+    "alist_tvbox",
+    "alist_xiaoya",
+    "beeg",
+    "avtoday",
+    "hkdoll",
+    "hohoj",
+    "madou",
+    "missav",
+    "naixxzy",
+    "pomo",
+    "pppPorn",
+    "pornhub",
+    "seedhub",
+    "xhamster",
+    "xsjyy"
+  ],
   "included": [
     "anime1",
     "avdb",
@@ -44,16 +61,19 @@
     "douyu",
     "duboku",
     "zym",
-    "huangguo"
+    "huangguo",
+    "ppp",
+    "yhdm"
   ],
-  "added": [],
+  "added": [
+    "pppHub",
+    "yhdm"
+  ],
   "removed": [],
   "skipped": [
     "4kav(排除名单)",
     "madou(排除名单)",
-    "hohoj(已手工移除)",
-    "ppp(无脚本)",
-    "yhdm(无脚本)"
+    "hohoj(已手工移除)"
   ],
   "suspicious": false,
   "aborted": false,
@@ -65,9 +85,8 @@
     "avdb",
     "douyu",
     "duboku",
-    "hohoj",
     "huangguo",
-    "huya",
+    "kuaikaw",
     "ppnix",
     "ppp",
     "rrmj",
@@ -77,7 +96,7 @@
   ],
   "failedStages": {
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
-    "kuaikaw": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
+    "huya": "stream: HTTP 403 ",
     "lmm85": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
