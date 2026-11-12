@@ -10,13 +10,9 @@
 https://raw.githubusercontent.com/hanzhenya/xptv-sources/main/subs/vod.json
 ```
 
-> **首次使用需先创建空仓库**（本机 GitHub API 凭据已失效，SSH 不支持自动建库，这一步必须手动做一次）：
-> 1. 打开 https://github.com/new?name=xptv-sources
-> 2. 可见性选 **Public**；README / .gitignore / License **三个都不要勾**（必须是空仓库，否则无法直接 push）
-> 3. 点 **Create repository**
-> 4. 回到项目目录执行 `./tools/publish.sh`，推送完成后上面的订阅地址即可访问
+> ✅ **已上线**（2026-11-12）：`hanzhenya/xptv-sources` 为**公开仓库**，`main` 分支。订阅配置与 8 个 js 均已匿名访问验证（HTTP 200、内容与本地逐字节一致），按线上地址下载后沙箱实跑 8/8 出列表。
 >
-> 仓库创建前该地址返回 404 属正常现象。
+> 以后改完任何文件，执行 `./tools/publish.sh` 即可更新，XPTV 端刷新订阅生效。
 
 ## 收录的 8 个源
 
