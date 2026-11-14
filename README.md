@@ -346,7 +346,7 @@ xptv-sources/
 - **加 / 减上游仓库**：直接改 `config.upstreams` 的 `enabled` 或新增条目即可，workflow 会自动循环 clone（B 模式已支持多仓库，**无需改 YAML**）
 - **本地手动跑完整流程**（用你自己的网络视角定稿）：按 `config.upstreams` 顺序把 4 个仓库 clone 到 `/tmp/upstreams/1..4`，然后：
   ```bash
-  cd ~/Desktop/xptv-sources/tools && npm install && cd ..
+  cd ~/MacminiWorkbench/xptv-sources/tools && npm install && cd ..
   node automation/auto-collect.js \
     --upstream-dir /tmp/upstreams/1/js --upstream-dir /tmp/upstreams/2/js \
     --upstream-dir /tmp/upstreams/3/js --upstream-dir /tmp/upstreams/4/js \
@@ -364,13 +364,13 @@ GitHub Actions 的机器在**境外**，网络视角与你家里的 XPTV（境�
 
 **改完某个源后推送**
 ```bash
-cd ~/Desktop/xptv-sources
+cd ~/MacminiWorkbench/xptv-sources
 ./tools/publish.sh                # 默认 xptv-sources
 ```
 
 **★ 刷新全量版 / 儿童版（新增可播源后）**
 ```bash
-cd ~/Desktop/xptv-sources
+cd ~/MacminiWorkbench/xptv-sources
 node tools/gen-all.js              # 用 docs 下最新的 result-*-play.json
 node tools/gen-all.js --dry-run    # 只预览条数，不写文件
 ```
@@ -378,7 +378,7 @@ node tools/gen-all.js --dry-run    # 只预览条数，不写文件
 
 **★ 复测播放链路（能发现「有海报但播不了」）**
 ```bash
-cd ~/Desktop/xptv-sources/tools
+cd ~/MacminiWorkbench/xptv-sources/tools
 npm install                                        # 首次即可
 TIMEOUT=15000 node playcheck.js                     # 项目内 14 个源全量
 TIMEOUT=15000 node playcheck.js ../js 4kav,anime1    # 只测指定源
@@ -388,7 +388,7 @@ cat playcheck-result.json                           # 结构化结果
 
 **列表层检测 / 重检整个上游仓库**
 ```bash
-cd ~/Desktop/xptv-sources/tools
+cd ~/MacminiWorkbench/xptv-sources/tools
 TIMEOUT=12000 node check.js ../js                   # 项目内源
 TIMEOUT=12000 node check.js /tmp/upstreams/1/js           # 任一上游目录
 TIMEOUT=12000 node check.js /tmp/合并后的js目录             # B 模式约 150 源全量
@@ -424,7 +424,7 @@ TIMEOUT=12000 node check.js /tmp/合并后的js目录             # B 模式约 
 **核心认知：列表能出 ≠ 能播放。** 本项目 `农民影视`、`anime1` 都曾是「海报正常但播放断链」，`hdmoli`、`多多影音` 则是压根不返回播放流（网盘源）。
 
 ```bash
-cd ~/Desktop/xptv-sources/tools
+cd ~/MacminiWorkbench/xptv-sources/tools
 TIMEOUT=15000 node playcheck.js ../js wwgz,anime1   # 只测指定源（文件名不含 .js）
 cat playcheck-result.json
 ```
