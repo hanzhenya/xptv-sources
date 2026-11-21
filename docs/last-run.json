@@ -1,6 +1,6 @@
 {
-  "runAt": "2026-11-21T00:27:24.953Z",
-  "beijingTime": "2026-11-21 08:23",
+  "runAt": "2026-11-21T23:39:50.893Z",
+  "beijingTime": "2026-11-22 07:36",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
@@ -40,8 +40,8 @@
     "madou",
     "missav",
     "naixxzy",
-    "ppp",
     "pornhub",
+    "ppp",
     "pppPorn",
     "xhamster",
     "xsjyy"
@@ -57,12 +57,13 @@
     "rrmj",
     "douyu",
     "duboku",
-    "zym",
     "huangguo",
     "ai"
   ],
   "added": [],
-  "removed": [],
+  "removed": [
+    "zym"
+  ],
   "skipped": [
     "4kav(排除名单)",
     "madou(排除名单)",
@@ -74,21 +75,21 @@
   "okKeys": [
     "4kav",
     "7sefun",
-    "ai",
     "anime1",
     "apple",
     "avdb",
     "douyu",
     "duboku",
     "huangguo",
+    "huya",
     "kuaikaw",
     "ppnix",
     "rrmj",
     "wwgz"
   ],
   "failedStages": {
+    "ai": "stream: 子资源 HTTP 206 ",
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
-    "huya": "stream: HTTP 403 ",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
     "yhdm": "stream: HTTP 403 ",
