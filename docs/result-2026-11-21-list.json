@@ -1,0 +1,3534 @@
+[
+  {
+    "file": "91_vod_xptv.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 37,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 357
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "91jav.js",
+    "domains": [
+      "jdkir.triutpw.cc"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 82,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "jdkir.triutpw.cc",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 79
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "4kav.js",
+    "domains": [
+      "4kmp.com"
+    ],
+    "status": "ok",
+    "detail": "列表 48 条",
+    "listCount": 48,
+    "tabs": 3,
+    "firstReqStatus": 200,
+    "totalMs": 1060,
+    "title": "4k-av",
+    "style": "native",
+    "firstTitle": "The Great Long March Complete",
+    "reqCount": 1
+  },
+  {
+    "file": "7sefun.js",
+    "domains": [
+      "www.7sefun.top",
+      "dp.no3acg.com",
+      "nplayer.7sefun.top",
+      "www.7sefun.com",
+      "play.7sefun.com",
+      "jx.jsonplayer.com"
+    ],
+    "status": "ok",
+    "detail": "列表 20 条",
+    "listCount": 20,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 1086,
+    "title": "七色番",
+    "style": "native",
+    "firstTitle": "弱气MAX的大小姐、居然接受了铁腕未婚夫的赌约",
+    "reqCount": 1
+  },
+  {
+    "file": "GYING.js",
+    "domains": [
+      "www.gyg.la",
+      "s.tutu.pm"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 24,
+    "title": "观影网",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.gyg.la",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 28
+      },
+      {
+        "d": "s.tutu.pm",
+        "code": 200,
+        "ms": 161
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "EXPORNTOONS.js",
+    "domains": [
+      "exporntoons.net"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 1,
+    "firstReqStatus": 200,
+    "totalMs": 846,
+    "title": "exporntoons",
+    "style": "native",
+    "firstTitle": "[Williamhiggins] xmas wank party 2020 (maxim bikhov, jeremy robbins, istvan rat, adrian serdar) com/mirgayporno",
+    "reqCount": 1
+  },
+  {
+    "file": "GYING-line-pan.js",
+    "domains": [
+      "www.gying.org",
+      "s.tutu.pm"
+    ],
+    "status": "error",
+    "detail": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 161,
+    "title": "观影网",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.gying.org",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 145
+      },
+      {
+        "d": "s.tutu.pm",
+        "code": 200,
+        "ms": 40
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "555ys.js",
+    "domains": [
+      "www.wuwugo.life",
+      "555dy.analyt.eu.org"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 200,
+    "totalMs": 1198,
+    "title": "555影视",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 8,
+    "probe": [
+      {
+        "d": "www.wuwugo.life",
+        "code": 200,
+        "ms": 60
+      },
+      {
+        "d": "555dy.analyt.eu.org",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 294
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "GYING_2025_2.js",
+    "domains": [
+      "www.gying.org",
+      "s.tutu.pm"
+    ],
+    "status": "error",
+    "detail": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 153,
+    "title": "观影网",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.gying.org",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 212
+      },
+      {
+        "d": "s.tutu.pm",
+        "code": 200,
+        "ms": 39
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "SpankBang.js",
+    "domains": [
+      "jp.spankbang.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 1,
+    "firstReqStatus": 403,
+    "totalMs": 117,
+    "title": "spankbang",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "jp.spankbang.com",
+        "code": 403,
+        "ms": 42
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "GimyTV.js",
+    "domains": [
+      "player.heimuer.tv",
+      "gimy.tv"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 403,
+    "totalMs": 211,
+    "title": "gimy剧迷",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "player.heimuer.tv",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 124
+      },
+      {
+        "d": "gimy.tv",
+        "code": 403,
+        "ms": 47
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "KoreaPornMovie.js",
+    "domains": [
+      "koreanpornmovie.com"
+    ],
+    "status": "ok",
+    "detail": "列表 75 条",
+    "listCount": 75,
+    "tabs": 2,
+    "firstReqStatus": 200,
+    "totalMs": 555,
+    "title": "KoreaPornMovie",
+    "style": "native",
+    "firstTitle": "Taste of Swapping 3 (2026)",
+    "reqCount": 1
+  },
+  {
+    "file": "age.js",
+    "domains": [
+      "www.agedm.io",
+      "api.agedm.io"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 1,
+    "firstReqStatus": 403,
+    "totalMs": 424,
+    "title": "AGE",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.agedm.io",
+        "code": 403,
+        "ms": 332
+      },
+      {
+        "d": "api.agedm.io",
+        "code": 403,
+        "ms": 34
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "ai.js",
+    "domains": [
+      "bgm.girigirilove.com"
+    ],
+    "status": "ok",
+    "detail": "列表 48 条",
+    "listCount": 48,
+    "tabs": 3,
+    "firstReqStatus": 200,
+    "totalMs": 641,
+    "title": "ギリギリ动漫",
+    "style": "native",
+    "firstTitle": "我家的弟弟们真是让您费心了",
+    "reqCount": 1
+  },
+  {
+    "file": "alist_tvbox.js",
+    "domains": [],
+    "status": "ok",
+    "detail": "列表 2 条",
+    "listCount": 2,
+    "tabs": 1,
+    "firstReqStatus": null,
+    "totalMs": 0,
+    "title": "小雅tvbox",
+    "style": "native",
+    "firstTitle": "請在自定義配置中填入url",
+    "reqCount": 0
+  },
+  {
+    "file": "alist_xiaoya.js",
+    "domains": [
+      "movie.top"
+    ],
+    "status": "ok",
+    "detail": "列表 2 条",
+    "listCount": 2,
+    "tabs": 1,
+    "firstReqStatus": null,
+    "totalMs": 0,
+    "title": "小雅原版",
+    "style": "native",
+    "firstTitle": "請在自定義配置中填入小雅配置",
+    "reqCount": 0
+  },
+  {
+    "file": "SupJav.js",
+    "domains": [
+      "supjav.com",
+      "lk1.supremejav.com",
+      "fc2stream.tv"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 403,
+    "totalMs": 423,
+    "title": "SupJav",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "supjav.com",
+        "code": 403,
+        "ms": 77
+      },
+      {
+        "d": "lk1.supremejav.com",
+        "code": 403,
+        "ms": 224
+      },
+      {
+        "d": "fc2stream.tv",
+        "code": 200,
+        "ms": 794
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "aiyjw.js",
+    "domains": [
+      "player.heimuer.tv",
+      "www.2yjw.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 403,
+    "totalMs": 1234,
+    "title": "爱影剧网",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 3,
+    "probe": [
+      {
+        "d": "player.heimuer.tv",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 128
+      },
+      {
+        "d": "www.2yjw.com",
+        "code": 403,
+        "ms": 126
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "anime1.js",
+    "domains": [
+      "anime1.me",
+      "v.anime1.me"
+    ],
+    "status": "ok",
+    "detail": "列表 1965 条",
+    "listCount": 1965,
+    "tabs": 1,
+    "firstReqStatus": 200,
+    "totalMs": 890,
+    "title": "anime1",
+    "style": "native",
+    "firstTitle": "東京復仇者 三天戰爭篇",
+    "reqCount": 1
+  },
+  {
+    "file": "VodMax.js",
+    "domains": [
+      "ffzy5.tv",
+      "wolongzyw.com",
+      "api.zuidapi.com",
+      "api.apibdzy.com",
+      "bfzyapi.com",
+      "jszyapi.com"
+    ],
+    "status": "no_entry",
+    "detail": "无原生入口,导出: createCryptoJS,loadJSEncrypt,$print,setTimeout,clearTimeout,setInterval,clearInterval,Buffer,URL,URLSearchParams,TextDecoder,TextEncoder",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "style": "obfuscated",
+    "exports": [
+      "createCryptoJS",
+      "loadJSEncrypt",
+      "$print",
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "Buffer",
+      "URL",
+      "URLSearchParams",
+      "TextDecoder",
+      "TextEncoder"
+    ],
+    "probe": [
+      {
+        "d": "ffzy5.tv",
+        "code": 200,
+        "ms": 1122
+      },
+      {
+        "d": "wolongzyw.com",
+        "code": 200,
+        "ms": 842
+      },
+      {
+        "d": "api.zuidapi.com",
+        "code": 200,
+        "ms": 850
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "aomi.js",
+    "domains": [
+      "vip.omii.top"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 276,
+    "title": "奥秘",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vip.omii.top",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 520
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "aowu_get_play_url.js",
+    "domains": [
+      "www.aowu.tv"
+    ],
+    "status": "error",
+    "detail": "require is not defined",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "www.aowu.tv",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 870
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "avdb.js",
+    "domains": [
+      "avdbapi.com"
+    ],
+    "status": "ok",
+    "detail": "列表 100 条",
+    "listCount": 100,
+    "tabs": 7,
+    "firstReqStatus": 200,
+    "totalMs": 596,
+    "title": "avdb",
+    "style": "native",
+    "firstTitle": "OKS-129 Kudo Lara wet and shiny tight-fitting god school swimsuit! Enjoy the cute girl's school swimsuit figure intimately! Starting with changing room voyeurism, from small tits to big tits, shaved, trimmed pubic hair, wetness",
+    "reqCount": 2
+  },
+  {
+    "file": "aowu.js",
+    "domains": [
+      "www.aowu.tv"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 1282,
+    "title": "aowu",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.aowu.tv",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 754
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "baipiao.js",
+    "domains": [
+      "smdyo.top"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 54,
+    "title": "白嫖",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "smdyo.top",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 276
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "anfuns.js",
+    "domains": [
+      "www.anfuns.org"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 401,
+    "totalMs": 3717,
+    "title": "anfuns",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5,
+    "probe": [
+      {
+        "d": "www.anfuns.org",
+        "code": 200,
+        "ms": 361
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "beeg.js",
+    "domains": [
+      "store.externulls.com",
+      "beeg.com",
+      "video.beeg.com",
+      "thumbs.externulls.com",
+      "img.externulls.com"
+    ],
+    "status": "ok",
+    "detail": "列表 48 条",
+    "listCount": 48,
+    "tabs": 162,
+    "firstReqStatus": 200,
+    "totalMs": 113,
+    "title": "Beeg",
+    "style": "native",
+    "firstTitle": "Quiet farewell sex while their parents are next door",
+    "reqCount": 1
+  },
+  {
+    "file": "bililive.js",
+    "domains": [
+      "live.bilibili.com",
+      "api.live.bilibili.com",
+      "api.bilibili.com"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'list')",
+    "listCount": 0,
+    "tabs": 11,
+    "firstReqStatus": 200,
+    "totalMs": 399,
+    "title": "bililive",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "live.bilibili.com",
+        "code": 200,
+        "ms": 403
+      },
+      {
+        "d": "api.live.bilibili.com",
+        "code": 404,
+        "ms": 371
+      },
+      {
+        "d": "api.bilibili.com",
+        "code": 200,
+        "ms": 1703
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "avtoday.js",
+    "domains": [
+      "avtoday.io"
+    ],
+    "status": "ok",
+    "detail": "列表 2 条(来自第4个tab)",
+    "listCount": 2,
+    "tabs": 16,
+    "firstReqStatus": 200,
+    "totalMs": 4395,
+    "title": "avtoday",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5
+  },
+  {
+    "file": "catflix.js",
+    "domains": [
+      "catflix.su",
+      "turbovid.eu"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'html')",
+    "listCount": 0,
+    "tabs": 2,
+    "firstReqStatus": 200,
+    "totalMs": 787,
+    "title": "catflix",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "catflix.su",
+        "code": 200,
+        "ms": 125
+      },
+      {
+        "d": "turbovid.eu",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 192
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "bttwo.js",
+    "domains": [
+      "bttwo.vip",
+      "www.bttwo.me",
+      "shattereddisk.github.io"
+    ],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 984,
+    "title": "兩個BT",
+    "style": "native",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "bttwo.vip",
+        "code": 200,
+        "ms": 520
+      },
+      {
+        "d": "www.bttwo.me",
+        "code": 200,
+        "ms": 332
+      },
+      {
+        "d": "shattereddisk.github.io",
+        "code": 404,
+        "ms": 100
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "czzy.js",
+    "domains": [
+      "www.czzymovie.com",
+      "czzy.xn--m7r412advb92j21st65a.tk"
+    ],
+    "status": "error",
+    "detail": "cheerio.load() expects a string",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 403,
+    "totalMs": 430,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.czzymovie.com",
+        "code": 403,
+        "ms": 74
+      },
+      {
+        "d": "czzy.xn--m7r412advb92j21st65a.tk",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 152
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "cupfox.js",
+    "domains": [
+      "www.cupfox.ai"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 1,
+    "firstReqStatus": 200,
+    "totalMs": 836,
+    "title": "茶杯狐",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "www.cupfox.ai",
+        "code": 404,
+        "ms": 183
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "dmxq.js",
+    "domains": [
+      "dmxq24.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 403,
+    "totalMs": 324,
+    "title": "大米星球|昊",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "dmxq24.com",
+        "code": 403,
+        "ms": 67
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "apple.js",
+    "domains": [
+      "item.xpgcom.com",
+      "c.xpgtv.net"
+    ],
+    "status": "ok",
+    "detail": "列表 20 条",
+    "listCount": 20,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 8368,
+    "title": "小蘋果",
+    "style": "native",
+    "firstTitle": "绚烂一刻",
+    "reqCount": 1
+  },
+  {
+    "file": "duanjutt.js",
+    "domains": [
+      "duanjutt.tv"
+    ],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 243,
+    "title": "短劇天堂",
+    "style": "native",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "duanjutt.tv",
+        "code": 200,
+        "ms": 89
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "duboku.js",
+    "domains": [
+      "www.dbku.tv"
+    ],
+    "status": "ok",
+    "detail": "列表 48 条",
+    "listCount": 48,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 349,
+    "title": "独播库",
+    "style": "native",
+    "firstTitle": "极限逃生",
+    "reqCount": 1
+  },
+  {
+    "file": "douyu.js",
+    "domains": [
+      "www.douyu.com",
+      "m.douyu.com"
+    ],
+    "status": "ok",
+    "detail": "列表 8 条",
+    "listCount": 8,
+    "tabs": 9,
+    "firstReqStatus": 200,
+    "totalMs": 1078,
+    "title": "douyu",
+    "style": "native",
+    "firstTitle": "幸福的童年治愈一生，不幸的童年用一生治愈",
+    "reqCount": 1
+  },
+  {
+    "file": "ddys.js",
+    "domains": [
+      "ddys.pro",
+      "drive.uc.cn",
+      "pan.quark.cn",
+      "v.ddys.pro",
+      "ddys.mov"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 13,
+    "firstReqStatus": 0,
+    "totalMs": 100,
+    "title": "低端影视",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "ddys.pro",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 266
+      },
+      {
+        "d": "drive.uc.cn",
+        "code": 200,
+        "ms": 1588
+      },
+      {
+        "d": "pan.quark.cn",
+        "code": 200,
+        "ms": 1481
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "fqdj.js",
+    "domains": [
+      "fanqienovel.com",
+      "reading.snssdk.com",
+      "fq.skybook.qzz.io"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 10,
+    "firstReqStatus": 200,
+    "totalMs": 3186,
+    "title": "红果短剧",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 10,
+    "probe": [
+      {
+        "d": "fanqienovel.com",
+        "code": 200,
+        "ms": 1165
+      },
+      {
+        "d": "reading.snssdk.com",
+        "code": 404,
+        "ms": 599
+      },
+      {
+        "d": "fq.skybook.qzz.io",
+        "code": 403,
+        "ms": 736
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "guanying.js",
+    "domains": [
+      "www.gying.org",
+      "s.tutu.pm",
+      "www.gyg.la"
+    ],
+    "status": "error",
+    "detail": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 131,
+    "title": "观影网",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.gying.org",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 72
+      },
+      {
+        "d": "s.tutu.pm",
+        "code": 200,
+        "ms": 130
+      },
+      {
+        "d": "www.gyg.la",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 35
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "gzys.js",
+    "domains": [
+      "api.rmedphk.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 200,
+    "totalMs": 1019,
+    "title": "瓜子",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "api.rmedphk.com",
+        "code": 200,
+        "ms": 817
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "hanime.js",
+    "domains": [
+      "hanime1.me"
+    ],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 403,
+    "totalMs": 95,
+    "title": "hanime",
+    "style": "native",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "hanime1.me",
+        "code": 403,
+        "ms": 43
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "hdmoli.js",
+    "domains": [
+      "hdmoli.pro",
+      "v.damoli.pro"
+    ],
+    "status": "ok",
+    "detail": "列表 40 条",
+    "listCount": 40,
+    "tabs": 3,
+    "firstReqStatus": 200,
+    "totalMs": 2429,
+    "title": "hdmoli",
+    "style": "native",
+    "firstTitle": "黑帮领地 第二季",
+    "reqCount": 1
+  },
+  {
+    "file": "hdys.js",
+    "domains": [
+      "hd.huaduys.org"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'match')",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 352,
+    "title": "花都",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "hd.huaduys.org",
+        "code": 0,
+        "err": "UND_ERR_SOCKET",
+        "ms": 312
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "hgtv.js",
+    "domains": [
+      "player.heimuer.tv",
+      "www.haigui.tv",
+      "svip.qlplayer.cyou"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 403,
+    "totalMs": 434,
+    "title": "海龟TV",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "player.heimuer.tv",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 125
+      },
+      {
+        "d": "www.haigui.tv",
+        "code": 403,
+        "ms": 62
+      },
+      {
+        "d": "svip.qlplayer.cyou",
+        "code": 200,
+        "ms": 283
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "hgtv_1.js",
+    "domains": [
+      "www.haigui.tv"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 403,
+    "totalMs": 448,
+    "title": "海龟TV",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "www.haigui.tv",
+        "code": 403,
+        "ms": 72
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "bdys.js",
+    "domains": [
+      "v.xl01.eu.cc"
+    ],
+    "status": "timeout",
+    "detail": "TIMEOUT",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 12001,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "v.xl01.eu.cc",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10002
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "hkdoll.js",
+    "domains": [
+      "hongkongdollvideo.com"
+    ],
+    "status": "ok",
+    "detail": "列表 36 条",
+    "listCount": 36,
+    "tabs": 38,
+    "firstReqStatus": 200,
+    "totalMs": 1071,
+    "title": "hkdoll",
+    "style": "native",
+    "firstTitle": "麻豆传媒 MD0253 夏日考前冲刺 - 韩棠 沈娜娜",
+    "reqCount": 2
+  },
+  {
+    "file": "hohoj.js",
+    "domains": [
+      "hohoj.tv"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 380,
+    "title": "HOHOJ",
+    "style": "native",
+    "firstTitle": "DVAJ-764 自從被朋友的媽媽偷偷破處後，每天都被她用乳頭六九式、同時乳交與口交、深喉嚨吞精以及猛烈活塞運動瘋狂榨乾【性愛技巧超厲害】 愛那あい",
+    "reqCount": 1
+  },
+  {
+    "file": "huangguo.js",
+    "domains": [
+      "huangguo.498246.xyz"
+    ],
+    "status": "ok",
+    "detail": "列表 42 条",
+    "listCount": 42,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 274,
+    "title": "黄果短剧",
+    "style": "native",
+    "firstTitle": "炮友满屋",
+    "reqCount": 1
+  },
+  {
+    "file": "dytt.js",
+    "domains": [
+      "cgi.dytt8vip.com"
+    ],
+    "status": "error",
+    "detail": "EAI_AGAIN",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 10018,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "cgi.dytt8vip.com",
+        "code": 0,
+        "err": "EAI_AGAIN",
+        "ms": 9078
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "fmovies.js",
+    "domains": [
+      "fmovies.llc"
+    ],
+    "status": "timeout",
+    "detail": "TIMEOUT",
+    "listCount": 0,
+    "tabs": 2,
+    "firstReqStatus": 0,
+    "totalMs": 12001,
+    "title": "fmovies",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "fmovies.llc",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "huya.js",
+    "domains": [],
+    "status": "ok",
+    "detail": "列表 120 条",
+    "listCount": 120,
+    "tabs": 322,
+    "firstReqStatus": 200,
+    "totalMs": 2700,
+    "title": "huya",
+    "style": "native",
+    "firstTitle": "恭喜BLG获得2026英雄联盟全球总决赛冠军！",
+    "reqCount": 5
+  },
+  {
+    "file": "iyftv.js",
+    "domains": [
+      "m10.iyf.tv",
+      "rankv21.iyf.tv",
+      "www.iyf.tv"
+    ],
+    "status": "error",
+    "detail": "Unexpected end of JSON input",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 403,
+    "totalMs": 78,
+    "title": "愛壹帆",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "m10.iyf.tv",
+        "code": 403,
+        "ms": 76
+      },
+      {
+        "d": "rankv21.iyf.tv",
+        "code": 403,
+        "ms": 199
+      },
+      {
+        "d": "www.iyf.tv",
+        "code": 403,
+        "ms": 46
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "jable.js",
+    "domains": [
+      "jable.tv"
+    ],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 403,
+    "totalMs": 65,
+    "title": "jable",
+    "style": "native",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "jable.tv",
+        "code": 403,
+        "ms": 42
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "javdb_vod_xptv.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 95
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "huban.js",
+    "domains": [],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 0,
+    "totalMs": 10350,
+    "title": "虎斑",
+    "style": "native",
+    "reqCount": 1
+  },
+  {
+    "file": "javxx.js",
+    "domains": [
+      "javxx.com",
+      "surrit.store"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 403,
+    "totalMs": 356,
+    "title": "javxx",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5,
+    "probe": [
+      {
+        "d": "javxx.com",
+        "code": 403,
+        "ms": 64
+      },
+      {
+        "d": "surrit.store",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 74
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "javmove.js",
+    "domains": [
+      "javmove.com",
+      "javquick.com"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 2,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "JavMove",
+    "style": "native",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "javmove.com",
+        "code": 200,
+        "ms": 748
+      },
+      {
+        "d": "javquick.com",
+        "code": 200,
+        "ms": 1303
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "huban_old.js",
+    "domains": [],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 0,
+    "totalMs": 10078,
+    "title": "虎斑",
+    "style": "native",
+    "reqCount": 1
+  },
+  {
+    "file": "jdys.js",
+    "domains": [
+      "www.jdys.art"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 1623,
+    "title": "絕對影視",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "www.jdys.art",
+        "code": 200,
+        "ms": 927
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "jianpian.js",
+    "domains": [
+      "ev5356.970xw.com",
+      "api.ztcgi.com"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 200,
+    "totalMs": 1490,
+    "title": "jianpian",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "ev5356.970xw.com",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 878
+      },
+      {
+        "d": "api.ztcgi.com",
+        "code": 200,
+        "ms": 57
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "jtapp.js",
+    "domains": [
+      "5jsd6q7.jnfkdtm.xyz"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 101,
+    "title": "加藤視頻",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "5jsd6q7.jnfkdtm.xyz",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 47
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "jpyy.js",
+    "domains": [
+      "raw.githubusercontent.com",
+      "www.jiabaide.cn"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "金牌影视",
+    "style": "native",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "raw.githubusercontent.com",
+        "code": 200,
+        "ms": 219
+      },
+      {
+        "d": "www.jiabaide.cn",
+        "code": 403,
+        "ms": 1973
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "hjkk.js",
+    "domains": [
+      "www.hanjukankan.com"
+    ],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 10317,
+    "title": "韓劇看看",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.hanjukankan.com",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "jcy.js",
+    "domains": [],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 10019,
+    "title": "囧次元",
+    "style": "native",
+    "reqCount": 1
+  },
+  {
+    "file": "kanav.js",
+    "domains": [
+      "kanav.info",
+      "kanav.ad"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "KanAV",
+    "style": "native",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "kanav.info",
+        "code": 403,
+        "ms": 216
+      },
+      {
+        "d": "kanav.ad",
+        "code": 403,
+        "ms": 124
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "kbjfan.js",
+    "domains": [
+      "www.kbjfan.com"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 2,
+    "firstReqStatus": 0,
+    "totalMs": 67,
+    "title": "kbjfan",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.kbjfan.com",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 48
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "kuaikaw.js",
+    "domains": [
+      "www.kuaikaw.cn"
+    ],
+    "status": "ok",
+    "detail": "列表 10 条",
+    "listCount": 10,
+    "tabs": 126,
+    "firstReqStatus": 200,
+    "totalMs": 2063,
+    "title": "河马剧场",
+    "style": "native",
+    "firstTitle": "房租翻三番，我当场退租",
+    "reqCount": 2
+  },
+  {
+    "file": "labipan.js",
+    "domains": [
+      "www.labi88.sbs"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 619,
+    "title": "蜡笔盘",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "www.labi88.sbs",
+        "code": 200,
+        "ms": 104
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "laodifang.js",
+    "domains": [],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 618,
+    "title": "老地方",
+    "style": "native",
+    "reqCount": 2
+  },
+  {
+    "file": "jujiTV-online.js",
+    "domains": [
+      "www.tvjuji.cc"
+    ],
+    "status": "error",
+    "detail": "UND_ERR_SOCKET",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 0,
+    "totalMs": 1173,
+    "title": "剧集TV-online|昊",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.tvjuji.cc",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "jujiTV-line-pan.js",
+    "domains": [
+      "www.tvjuji.cc",
+      "www.jujizy.com"
+    ],
+    "status": "error",
+    "detail": "UND_ERR_SOCKET",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 0,
+    "totalMs": 1161,
+    "title": "剧集TV|昊",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.tvjuji.cc",
+        "code": 0,
+        "err": "UND_ERR_SOCKET",
+        "ms": 676
+      },
+      {
+        "d": "www.jujizy.com",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "liuqu.js",
+    "domains": [
+      "wp.0v.fit"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 0,
+    "totalMs": 45,
+    "title": "六趣",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "wp.0v.fit",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 122
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "leijing.js",
+    "domains": [
+      "www.leijing1.com",
+      "cloud.189.cn"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'Set-Cookie')",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 954,
+    "title": "雷鲸",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.leijing1.com",
+        "code": 200,
+        "ms": 335
+      },
+      {
+        "d": "cloud.189.cn",
+        "code": 200,
+        "ms": 2370
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "madou.js",
+    "domains": [
+      "madou.club"
+    ],
+    "status": "ok",
+    "detail": "列表 20 条",
+    "listCount": 20,
+    "tabs": 34,
+    "firstReqStatus": 200,
+    "totalMs": 1032,
+    "title": "麻豆社",
+    "style": "native",
+    "firstTitle": "MD0362 踢爆 淫僧释永信禅房偷拍实录 少林肉棒替女信徒消灾解厄",
+    "reqCount": 2
+  },
+  {
+    "file": "libvio.js",
+    "domains": [
+      "www.libvios.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 2194,
+    "title": "LIBVIO",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "www.libvios.com",
+        "code": 200,
+        "ms": 242
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "lmm85.js",
+    "domains": [
+      "www.lmm85.com",
+      "yun.92cj.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 10,
+    "firstReqStatus": 404,
+    "totalMs": 1470,
+    "title": "路漫漫動漫",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 10,
+    "probe": [
+      {
+        "d": "www.lmm85.com",
+        "code": 200,
+        "ms": 46
+      },
+      {
+        "d": "yun.92cj.com",
+        "code": 0,
+        "err": "UND_ERR_SOCKET",
+        "ms": 1089
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "mihdr.js",
+    "domains": [
+      "mihdr.top"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 323,
+    "title": "小米",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "mihdr.top",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 133
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "missav.js",
+    "domains": [
+      "missav.ai",
+      "surrit.com"
+    ],
+    "status": "ok",
+    "detail": "列表 12 条",
+    "listCount": 12,
+    "tabs": 31,
+    "firstReqStatus": 200,
+    "totalMs": 456,
+    "title": "missav",
+    "style": "native",
+    "firstTitle": "IPZZ-963 我与一位温柔甜美、成熟可爱的女同事的婚外情让我深陷其中，也让我的婚姻濒临崩溃。我一秒钟都不想跟她分开。我们的性爱令人欲罢不能。 ——筱崎沙保",
+    "reqCount": 1
+  },
+  {
+    "file": "meijumi.js",
+    "domains": [
+      "www.meijumi.net"
+    ],
+    "status": "ok",
+    "detail": "列表 15 条",
+    "listCount": 15,
+    "tabs": 11,
+    "firstReqStatus": 200,
+    "totalMs": 1830,
+    "title": "美剧迷|昊",
+    "style": "native",
+    "firstTitle": "《雅嘎疑云第一季》Yaga 网盘/迅雷下载",
+    "reqCount": 1
+  },
+  {
+    "file": "mucpan.js",
+    "domains": [
+      "www.mucpan.cc"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 38,
+    "title": "小米UC资源站|昊",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.mucpan.cc",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 25
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "mitaotun.js",
+    "domains": [
+      "mitaotunbbx.xyz"
+    ],
+    "status": "error",
+    "detail": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+    "listCount": 0,
+    "tabs": 13,
+    "firstReqStatus": 0,
+    "totalMs": 221,
+    "title": "蜜桃臀",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "mitaotunbbx.xyz",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 229
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "naixxzy.js",
+    "domains": [
+      "naixxzy.com"
+    ],
+    "status": "ok",
+    "detail": "列表 50 条",
+    "listCount": 50,
+    "tabs": 21,
+    "firstReqStatus": 200,
+    "totalMs": 1478,
+    "title": "naixxzy",
+    "style": "native",
+    "firstTitle": "丝袜高跟极品好身材女模特大秀诱人",
+    "reqCount": 2
+  },
+  {
+    "file": "nanfdj.js",
+    "domains": [
+      "www.nanf.cc"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 78,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.nanf.cc",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 105
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "nmlive.js",
+    "domains": [],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 143,
+    "title": "lemonlive",
+    "style": "native",
+    "reqCount": 1
+  },
+  {
+    "file": "novipnoad.js",
+    "domains": [
+      "player.novipnoad.net",
+      "www.novipnoad.net",
+      "github.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 10,
+    "firstReqStatus": 403,
+    "totalMs": 911,
+    "title": "NO視頻",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 10,
+    "probe": [
+      {
+        "d": "player.novipnoad.net",
+        "code": 403,
+        "ms": 553
+      },
+      {
+        "d": "www.novipnoad.net",
+        "code": 403,
+        "ms": 13
+      },
+      {
+        "d": "github.com",
+        "code": 200,
+        "ms": 173
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "ole.js",
+    "domains": [
+      "api.olelive.com",
+      "static.olelive.com"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 1067,
+    "title": "歐樂影視",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "api.olelive.com",
+        "code": 404,
+        "ms": 118
+      },
+      {
+        "d": "static.olelive.com",
+        "code": 403,
+        "ms": 435
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "one.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 229
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "ouge.js",
+    "domains": [
+      "woog.nxog.eu.org"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 403,
+    "totalMs": 575,
+    "title": "欧歌",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5,
+    "probe": [
+      {
+        "d": "woog.nxog.eu.org",
+        "code": 403,
+        "ms": 76
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "pandatv.js",
+    "domains": [
+      "m.pandalive.co.kr"
+    ],
+    "status": "ok",
+    "detail": "列表 10 条",
+    "listCount": 10,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 1146,
+    "title": "pandatv",
+    "style": "native",
+    "firstTitle": "미키™ ❤ 음악힐링 & 열혈BJ 홍보!!",
+    "reqCount": 1
+  },
+  {
+    "file": "ph_vod_gay.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 55
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "ph_vod_xptv.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 91
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "madoucun.js",
+    "domains": [
+      "madoucun.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 58,
+    "firstReqStatus": 200,
+    "totalMs": 11509,
+    "title": "麻豆村",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 58,
+    "probe": [
+      {
+        "d": "madoucun.com",
+        "code": 200,
+        "ms": 191
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "pomo.js",
+    "domains": [
+      "pomo.mom",
+      "pan.quark.cn"
+    ],
+    "status": "error",
+    "detail": "UND_ERR_SOCKET",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 0,
+    "totalMs": 918,
+    "title": "Pomo",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "pomo.mom",
+        "code": 200,
+        "ms": 827
+      },
+      {
+        "d": "pan.quark.cn",
+        "code": 200,
+        "ms": 1061
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "ppnix.js",
+    "domains": [
+      "www.ppnix.com"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 2,
+    "firstReqStatus": 200,
+    "totalMs": 343,
+    "title": "PPnix",
+    "style": "native",
+    "firstTitle": "门禁惊魂",
+    "reqCount": 1
+  },
+  {
+    "file": "ppp.js",
+    "domains": [
+      "ppp.porn"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 33,
+    "firstReqStatus": 200,
+    "totalMs": 864,
+    "title": "pppPorn",
+    "style": "native",
+    "firstTitle": "XJX770 情慾女主管讓不合格的部屬舔絲襪腳",
+    "reqCount": 2
+  },
+  {
+    "file": "pornhub.js",
+    "domains": [
+      "cn.pornhub.com"
+    ],
+    "status": "ok",
+    "detail": "列表 35 条",
+    "listCount": 35,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 1992,
+    "title": "pornhub",
+    "style": "native",
+    "firstTitle": "Stepmom Walked In on Us and Decided Two Cocks Are Better Than One",
+    "reqCount": 1
+  },
+  {
+    "file": "pppPorn.js",
+    "domains": [
+      "ppp.porn"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 33,
+    "firstReqStatus": 200,
+    "totalMs": 451,
+    "title": "pppPorn",
+    "style": "native",
+    "firstTitle": "XJX770 情慾女主管讓不合格的部屬舔絲襪腳",
+    "reqCount": 2
+  },
+  {
+    "file": "muou.js",
+    "domains": [
+      "123.666291.xyz",
+      "115.com"
+    ],
+    "status": "error",
+    "detail": "UND_ERR_SOCKET",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 981,
+    "title": "木偶",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "123.666291.xyz",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 9999
+      },
+      {
+        "d": "115.com",
+        "code": 200,
+        "ms": 1025
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "qjw.js",
+    "domains": [
+      "player.heimuer.tv",
+      "www.yijia5.com"
+    ],
+    "status": "error",
+    "detail": "ERR_SSL_SSLV3_ALERT_HANDSHAKE_FAILURE",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 302,
+    "title": "全集网",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "player.heimuer.tv",
+        "code": 0,
+        "err": "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+        "ms": 129
+      },
+      {
+        "d": "www.yijia5.com",
+        "code": 0,
+        "err": "ERR_SSL_SSLV3_ALERT_HANDSHAKE_FAILURE",
+        "ms": 102
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "ppxys.js",
+    "domains": [
+      "ppxys.vip",
+      "java.shijie.chat"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 503,
+    "totalMs": 306,
+    "title": "皮皮蝦",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 3,
+    "probe": [
+      {
+        "d": "ppxys.vip",
+        "code": 0,
+        "err": "ECONNRESET",
+        "ms": 35
+      },
+      {
+        "d": "java.shijie.chat",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 384
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "rousp.js",
+    "domains": [
+      "rou.video"
+    ],
+    "status": "error",
+    "detail": "ERR_INVALID_URL",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 1573,
+    "title": "肉视频",
+    "style": "native",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "rou.video",
+        "code": 200,
+        "ms": 222
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "rou.js",
+    "domains": [
+      "rou.video"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 2746,
+    "title": "肉视频",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5,
+    "probe": [
+      {
+        "d": "rou.video",
+        "code": 200,
+        "ms": 208
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "rrmj.js",
+    "domains": [
+      "api.rrmj.plus",
+      "t.me",
+      "rrsp.com.cn"
+    ],
+    "status": "ok",
+    "detail": "列表 30 条",
+    "listCount": 30,
+    "tabs": 10,
+    "firstReqStatus": 200,
+    "totalMs": 1356,
+    "title": "人人",
+    "style": "native",
+    "firstTitle": "第九行星",
+    "reqCount": 1
+  },
+  {
+    "file": "seedhub.js",
+    "domains": [
+      "www.seedhub.cc"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 403,
+    "totalMs": 247,
+    "title": "SeedHub",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "www.seedhub.cc",
+        "code": 403,
+        "ms": 53
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "qps.js",
+    "domains": [
+      "pan.funletu.com",
+      "v.funletu.com",
+      "www-qssily-com.oss-cn-shenzhen.aliyuncs.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 1,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "趣盘搜",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "pan.funletu.com",
+        "code": 200,
+        "ms": 2053
+      },
+      {
+        "d": "v.funletu.com",
+        "code": 0,
+        "err": "DEPTH_ZERO_SELF_SIGNED_CERT",
+        "ms": 889
+      },
+      {
+        "d": "www-qssily-com.oss-cn-shenzhen.aliyuncs.com",
+        "code": 403,
+        "ms": 965
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "saohuo.js",
+    "domains": [
+      "shdy2.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 522,
+    "totalMs": 914,
+    "title": "燒火電影",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 3,
+    "probe": [
+      {
+        "d": "shdy2.com",
+        "code": 522,
+        "ms": 121
+      }
+    ],
+    "verdict": "domain_dead"
+  },
+  {
+    "file": "sgsd.js",
+    "domains": [
+      "www.sgsd.xyz"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'forEach')",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 404,
+    "totalMs": 231,
+    "title": "追光影视",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.sgsd.xyz",
+        "code": 200,
+        "ms": 182
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "jujiTV_pan.js",
+    "domains": [
+      "www.tvjuji.cc",
+      "www.jujizy.com"
+    ],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 0,
+    "totalMs": 10499,
+    "title": "剧集TV|昊",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.tvjuji.cc",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      },
+      {
+        "d": "www.jujizy.com",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "subaibai.js",
+    "domains": [
+      "www.subaibai.com",
+      "shattereddisk.github.io"
+    ],
+    "status": "error",
+    "detail": "ECONNREFUSED",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1662,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.subaibai.com",
+        "code": 0,
+        "err": "ECONNREFUSED",
+        "ms": 1188
+      },
+      {
+        "d": "shattereddisk.github.io",
+        "code": 404,
+        "ms": 39
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "taiav.js",
+    "domains": [
+      "taiav.com",
+      "v15cdn.snmovie.com"
+    ],
+    "status": "error",
+    "detail": "argsify(...).forEach is not a function",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 403,
+    "totalMs": 114,
+    "title": "Taiav",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "taiav.com",
+        "code": 403,
+        "ms": 56
+      },
+      {
+        "d": "v15cdn.snmovie.com",
+        "code": 200,
+        "ms": 383
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "taohuazu.js",
+    "domains": [
+      "7340hsck.cc",
+      "hscangku.com",
+      "920ck.us"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 460,
+    "title": "桃花族",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "7340hsck.cc",
+        "code": 0,
+        "err": "ECONNREFUSED",
+        "ms": 288
+      },
+      {
+        "d": "hscangku.com",
+        "code": 200,
+        "ms": 1855
+      },
+      {
+        "d": "920ck.us",
+        "code": 0,
+        "err": "ECONNREFUSED",
+        "ms": 303
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "taozi.js",
+    "domains": [
+      "www.taozi008.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 466,
+    "title": "桃子视频|昊",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "www.taozi008.com",
+        "code": 200,
+        "ms": 87
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "tgs.js",
+    "domains": [
+      "t.me",
+      "115.com"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'forEach')",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "t.me",
+        "code": 200,
+        "ms": 788
+      },
+      {
+        "d": "115.com",
+        "code": 200,
+        "ms": 1050
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "tgs_xp.js",
+    "domains": [
+      "tgs.xptvhelper.link",
+      "115.com"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'forEach')",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "tgs.xptvhelper.link",
+        "code": 403,
+        "ms": 106
+      },
+      {
+        "d": "115.com",
+        "code": 200,
+        "ms": 261
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "shandian.js",
+    "domains": [],
+    "status": "timeout",
+    "detail": "UND_ERR_CONNECT_TIMEOUT",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 10036,
+    "title": "闪电",
+    "style": "native",
+    "reqCount": 1
+  },
+  {
+    "file": "tiantian.js",
+    "domains": [
+      "op.ysdqjs.cn"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 352,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "op.ysdqjs.cn",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 357
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "twivideo.js",
+    "domains": [
+      "twivideo.net"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 403,
+    "totalMs": 261,
+    "title": "twivideo",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 7,
+    "probe": [
+      {
+        "d": "twivideo.net",
+        "code": 403,
+        "ms": 35
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "uua.js",
+    "domains": [
+      "www.uaa.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 403,
+    "totalMs": 294,
+    "title": "有爱爱",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "www.uaa.com",
+        "code": 403,
+        "ms": 30
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "tianyiso.js",
+    "domains": [
+      "www.tianyiso.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 1,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "天逸搜",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "www.tianyiso.com",
+        "code": 403,
+        "ms": 999
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "star2.js",
+    "domains": [
+      "1.star2.cn"
+    ],
+    "status": "error",
+    "detail": "UND_ERR_SOCKET",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 0,
+    "totalMs": 1243,
+    "title": "star2",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "1.star2.cn",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "wfm.js",
+    "domains": [
+      "www.ncat1.app"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 3,
+    "firstReqStatus": 850,
+    "totalMs": 2240,
+    "title": "网菲猫",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 3,
+    "probe": [
+      {
+        "d": "www.ncat1.app",
+        "code": 850,
+        "ms": 213
+      }
+    ],
+    "verdict": "domain_dead"
+  },
+  {
+    "file": "vidhub.js",
+    "domains": [
+      "vidhub.icu"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 2662,
+    "title": "vidhub|昊",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 4,
+    "probe": [
+      {
+        "d": "vidhub.icu",
+        "code": 200,
+        "ms": 324
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "wwgz.js",
+    "domains": [
+      "vip.wwgz.cn",
+      "api.nmvod.me"
+    ],
+    "status": "ok",
+    "detail": "列表 30 条",
+    "listCount": 30,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 1359,
+    "title": "农民影视",
+    "style": "native",
+    "firstTitle": "阿马尔菲：女神的报酬",
+    "reqCount": 1
+  },
+  {
+    "file": "xh_vod_xptv.js",
+    "domains": [
+      "vod.infiniteapi.com"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1,
+    "title": "",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "vod.infiniteapi.com",
+        "code": 404,
+        "ms": 76
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "xhamster.js",
+    "domains": [
+      "zh.xhamster.com"
+    ],
+    "status": "ok",
+    "detail": "列表 53 条",
+    "listCount": 53,
+    "tabs": 3,
+    "firstReqStatus": 200,
+    "totalMs": 697,
+    "title": "xhamster",
+    "style": "native",
+    "firstTitle": "Cute Little Brunette Lilu Strips Jeans Panties Spreads Hairy Pussy Fingers Orgasm",
+    "reqCount": 1
+  },
+  {
+    "file": "xiafan.js",
+    "domains": [
+      "xiafan.banye.tech"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 0,
+    "totalMs": 606,
+    "title": "下饭",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "xiafan.banye.tech",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 218
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "wogg.js",
+    "domains": [
+      "www.wogg.net"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 7,
+    "firstReqStatus": 403,
+    "totalMs": 2864,
+    "title": "玩偶哥哥",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 7,
+    "probe": [
+      {
+        "d": "www.wogg.net",
+        "code": 403,
+        "ms": 587
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "xiaohys.js",
+    "domains": [
+      "www.xiaohys.com"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'forEach')",
+    "listCount": 0,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 927,
+    "title": "小紅",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.xiaohys.com",
+        "code": 200,
+        "ms": 527
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "xpanpan.js",
+    "domains": [
+      "xpanpan.site"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 27,
+    "title": "小盘盘",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "xpanpan.site",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 44
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "xingya.js",
+    "domains": [
+      "app.whjzjx.cn",
+      "u.shytkjgs.com"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'token')",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 200,
+    "totalMs": 820,
+    "title": "星芽短劇",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "app.whjzjx.cn",
+        "code": 503,
+        "ms": 1049
+      },
+      {
+        "d": "u.shytkjgs.com",
+        "code": 404,
+        "ms": 223
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "xsjyy.js",
+    "domains": [
+      "www.sypfjy.com",
+      "www.whbzj.com"
+    ],
+    "status": "ok",
+    "detail": "列表 72 条",
+    "listCount": 72,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 1036,
+    "title": "新视觉影院",
+    "style": "native",
+    "firstTitle": "大秦文公",
+    "reqCount": 1
+  },
+  {
+    "file": "yhdm.js",
+    "domains": [
+      "yhdm.one",
+      "hd.ijycnd.com",
+      "hn.bfvvs.com",
+      "play.xluuss.com"
+    ],
+    "status": "ok",
+    "detail": "列表 24 条",
+    "listCount": 24,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 242,
+    "title": "樱花动漫",
+    "style": "native",
+    "firstTitle": " 超时空辉夜姬！ ",
+    "reqCount": 1
+  },
+  {
+    "file": "xzys.js",
+    "domains": [
+      "xzys.fun"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 403,
+    "totalMs": 1475,
+    "title": "校长影视",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 5,
+    "probe": [
+      {
+        "d": "xzys.fun",
+        "code": 403,
+        "ms": 280
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "yiys.js",
+    "domains": [
+      "aleig4ah.yiys05.com"
+    ],
+    "status": "error",
+    "detail": "CERT_HAS_EXPIRED",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 1477,
+    "reqCount": 2,
+    "probe": [
+      {
+        "d": "aleig4ah.yiys05.com",
+        "code": 0,
+        "err": "CERT_HAS_EXPIRED",
+        "ms": 202
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "ysTV.js",
+    "domains": [
+      "api.yingshi.tv"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 44,
+    "title": "影视TV",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "api.yingshi.tv",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 48
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "ystt.js",
+    "domains": [
+      "ysttv.com"
+    ],
+    "status": "error",
+    "detail": "\"[object Object]\" is not valid JSON",
+    "listCount": 0,
+    "tabs": 11,
+    "firstReqStatus": null,
+    "totalMs": 1,
+    "title": "影视天堂",
+    "style": "native",
+    "reqCount": 0,
+    "probe": [
+      {
+        "d": "ysttv.com",
+        "code": 200,
+        "ms": 813
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "wobg.js",
+    "domains": [
+      "jnczyl.top"
+    ],
+    "status": "error",
+    "detail": "ECONNREFUSED",
+    "listCount": 0,
+    "tabs": 8,
+    "firstReqStatus": 0,
+    "totalMs": 946,
+    "title": "正奕",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "jnczyl.top",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10001
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "yunpan8.js",
+    "domains": [
+      "yunpan8.cc"
+    ],
+    "status": "error",
+    "detail": "Cannot read properties of undefined (reading 'data')",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 200,
+    "totalMs": 182,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "yunpan8.cc",
+        "code": 200,
+        "ms": 71
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "yunchao.js",
+    "domains": [
+      "www.pecc.xin",
+      "115.com"
+    ],
+    "status": "error",
+    "detail": "ENOTFOUND",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 62,
+    "title": "云巢",
+    "style": "native",
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "www.pecc.xin",
+        "code": 0,
+        "err": "ENOTFOUND",
+        "ms": 68
+      },
+      {
+        "d": "115.com",
+        "code": 200,
+        "ms": 1081
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "yunpanres.js",
+    "domains": [
+      "res.yunpan.win"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 1303,
+    "title": "云盘资源网",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "res.yunpan.win",
+        "code": 0,
+        "err": "ETIMEDOUT",
+        "ms": 252
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "yydsys.js",
+    "domains": [
+      "tv.yydsys.top"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 403,
+    "totalMs": 1069,
+    "title": "多多影音",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "tv.yydsys.top",
+        "code": 403,
+        "ms": 71
+      }
+    ],
+    "verdict": "source_bug"
+  },
+  {
+    "file": "zxzj.js",
+    "domains": [
+      "www.zxzj.run"
+    ],
+    "status": "ok",
+    "detail": "列表 12 条",
+    "listCount": 12,
+    "tabs": 6,
+    "firstReqStatus": 200,
+    "totalMs": 259,
+    "title": "在线之家",
+    "style": "native",
+    "firstTitle": "铁血战士：杀戮之地",
+    "reqCount": 1
+  },
+  {
+    "file": "zym.js",
+    "domains": [
+      "www.weisiwang.com"
+    ],
+    "status": "ok",
+    "detail": "列表 40 条",
+    "listCount": 40,
+    "tabs": 4,
+    "firstReqStatus": 200,
+    "totalMs": 682,
+    "title": "追影猫",
+    "style": "native",
+    "firstTitle": "野兽之心",
+    "reqCount": 1
+  },
+  {
+    "file": "symx.js",
+    "domains": [],
+    "status": "error",
+    "detail": "Unexpected end of JSON input",
+    "listCount": 0,
+    "tabs": 5,
+    "firstReqStatus": 0,
+    "totalMs": 42434,
+    "title": "山有木兮",
+    "style": "native",
+    "reqCount": 5
+  },
+  {
+    "file": "zero.js",
+    "domains": [
+      "zero.mitotv.com"
+    ],
+    "status": "error",
+    "detail": "EAI_AGAIN",
+    "listCount": 0,
+    "tabs": 0,
+    "firstReqStatus": 0,
+    "totalMs": 10017,
+    "reqCount": 1,
+    "probe": [
+      {
+        "d": "zero.mitotv.com",
+        "code": 0,
+        "err": "AbortError",
+        "ms": 10000
+      }
+    ],
+    "verdict": "network_blocked"
+  },
+  {
+    "file": "ylys.js",
+    "domains": [
+      "www.ylys.tv"
+    ],
+    "status": "empty",
+    "detail": "请求成功但列表为空",
+    "listCount": 0,
+    "tabs": 6,
+    "firstReqStatus": 523,
+    "totalMs": 52679,
+    "title": "永乐影视",
+    "style": "native",
+    "firstTitle": "",
+    "reqCount": 6,
+    "probe": [
+      {
+        "d": "www.ylys.tv",
+        "code": 523,
+        "ms": 6206
+      }
+    ],
+    "verdict": "domain_dead"
+  }
+]

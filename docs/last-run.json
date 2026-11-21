@@ -1,11 +1,11 @@
 {
-  "runAt": "2026-11-20T01:01:44.952Z",
-  "beijingTime": "2026-11-20 08:57",
+  "runAt": "2026-11-21T00:27:24.953Z",
+  "beijingTime": "2026-11-21 08:23",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
-  "listOk": 37,
-  "playOk": 12,
+  "listOk": 36,
+  "playOk": 13,
   "candidates": [
     "4kav",
     "7sefun",
@@ -33,14 +33,13 @@
     "KoreaPornMovie",
     "alist_tvbox",
     "alist_xiaoya",
-    "avtoday",
     "beeg",
+    "avtoday",
     "hkdoll",
     "hohoj",
     "madou",
     "missav",
     "naixxzy",
-    "pomo",
     "ppp",
     "pornhub",
     "pppPorn",
@@ -82,6 +81,7 @@
     "douyu",
     "duboku",
     "huangguo",
+    "kuaikaw",
     "ppnix",
     "rrmj",
     "wwgz"
@@ -89,11 +89,10 @@
   "failedStages": {
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
     "huya": "stream: HTTP 403 ",
-    "kuaikaw": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
     "yhdm": "stream: HTTP 403 ",
     "zxzj": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）",
-    "zym": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT"
+    "zym": "stream: HTTP 连接失败 UND_ERR_SOCKET"
   }
 }
