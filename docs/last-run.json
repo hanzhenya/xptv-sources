@@ -1,11 +1,11 @@
 {
-  "runAt": "2026-11-22T23:58:39.249Z",
-  "beijingTime": "2026-11-23 07:54",
+  "runAt": "2026-11-24T04:11:22.099Z",
+  "beijingTime": "2026-11-24 12:07",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
-  "listOk": 34,
-  "playOk": 14,
+  "listOk": 36,
+  "playOk": 12,
   "candidates": [
     "4kav",
     "7sefun",
@@ -39,9 +39,12 @@
     "hkdoll",
     "hohoj",
     "madou",
+    "missav",
     "naixxzy",
+    "pornhub",
     "ppp",
     "pppPorn",
+    "xhamster",
     "xsjyy"
   ],
   "included": [
@@ -60,10 +63,7 @@
     "huya",
     "iyftv"
   ],
-  "added": [
-    "huya",
-    "愛壹帆"
-  ],
+  "added": [],
   "removed": [],
   "skipped": [
     "4kav(排除名单)",
@@ -80,18 +80,18 @@
     "anime1",
     "apple",
     "avdb",
+    "douyu",
     "duboku",
     "huangguo",
-    "huya",
-    "iyftv",
-    "kuaikaw",
     "ppnix",
     "rrmj",
     "wwgz"
   ],
   "failedStages": {
-    "douyu": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 10; SM-G960F Build/QP1A.190711.020; wv) AppleWebKit/",
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
+    "huya": "stream: HTTP 403 ",
+    "iyftv": "getCards: 列表为空 / 异常: Unexpected end of JSON input",
+    "kuaikaw": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
     "yhdm": "stream: HTTP 403 ",
