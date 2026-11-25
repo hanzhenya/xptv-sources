@@ -1,6 +1,6 @@
 {
-  "runAt": "2026-11-24T04:11:22.099Z",
-  "beijingTime": "2026-11-24 12:07",
+  "runAt": "2026-11-25T02:55:30.267Z",
+  "beijingTime": "2026-11-25 10:50",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
@@ -41,8 +41,8 @@
     "madou",
     "missav",
     "naixxzy",
-    "pornhub",
     "ppp",
+    "pornhub",
     "pppPorn",
     "xhamster",
     "xsjyy"
@@ -75,7 +75,6 @@
   "aborted": false,
   "okKeys": [
     "4kav",
-    "7sefun",
     "ai",
     "anime1",
     "apple",
@@ -83,17 +82,18 @@
     "douyu",
     "duboku",
     "huangguo",
+    "huya",
+    "kuaikaw",
     "ppnix",
-    "rrmj",
     "wwgz"
   ],
   "failedStages": {
+    "7sefun": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
-    "huya": "stream: HTTP 403 ",
     "iyftv": "getCards: 列表为空 / 异常: Unexpected end of JSON input",
-    "kuaikaw": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
+    "rrmj": "stream: HTTP 403 ",
     "yhdm": "stream: HTTP 403 ",
     "zxzj": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）",
     "zym": "stream: HTTP 连接失败 UND_ERR_SOCKET"
