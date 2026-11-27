@@ -1,14 +1,15 @@
 {
-  "runAt": "2026-11-26T02:02:30.797Z",
-  "beijingTime": "2026-11-26 09:58",
+  "runAt": "2026-11-27T02:02:06.310Z",
+  "beijingTime": "2026-11-27 09:58",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
-  "listOk": 36,
-  "playOk": 13,
+  "listOk": 35,
+  "playOk": 12,
   "candidates": [
     "4kav",
     "7sefun",
+    "age",
     "ai",
     "anime1",
     "apple",
@@ -18,7 +19,6 @@
     "hdmoli",
     "huangguo",
     "huya",
-    "iyftv",
     "kuaikaw",
     "meijumi",
     "pandatv",
@@ -31,18 +31,17 @@
   ],
   "skippedPlay": [
     "EXPORNTOONS",
-    "KoreaPornMovie",
     "alist_tvbox",
     "alist_xiaoya",
-    "avtoday",
     "beeg",
+    "avtoday",
     "hkdoll",
     "hohoj",
     "madou",
-    "missav",
     "naixxzy",
-    "ppp",
+    "pomo",
     "pornhub",
+    "ppp",
     "pppPorn",
     "xhamster",
     "xsjyy"
@@ -63,9 +62,7 @@
     "huya"
   ],
   "added": [],
-  "removed": [
-    "愛壹帆"
-  ],
+  "removed": [],
   "skipped": [
     "4kav(排除名单)",
     "madou(排除名单)",
@@ -78,25 +75,25 @@
     "4kav",
     "7sefun",
     "ai",
-    "anime1",
     "apple",
     "avdb",
     "douyu",
     "duboku",
     "huangguo",
-    "huya",
     "kuaikaw",
     "ppnix",
-    "rrmj"
+    "rrmj",
+    "zym"
   ],
   "failedStages": {
+    "age": "stream: HTTP 403 ",
+    "anime1": "getCards: 列表为空",
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
-    "iyftv": "getCards: 列表为空 / 异常: Unexpected end of JSON input",
+    "huya": "stream: HTTP 403 ",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
-    "wwgz": "stream: HTTP 连接失败 UND_ERR_CONNECT_TIMEOUT",
+    "wwgz": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）",
     "yhdm": "stream: HTTP 403 ",
-    "zxzj": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）",
-    "zym": "stream: HTTP 连接失败 UND_ERR_SOCKET"
+    "zxzj": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）"
   }
 }
