@@ -1,6 +1,6 @@
 {
-  "runAt": "2026-11-27T02:02:06.310Z",
-  "beijingTime": "2026-11-27 09:58",
+  "runAt": "2026-11-28T01:47:11.537Z",
+  "beijingTime": "2026-11-28 09:42",
   "mode": "live",
   "upstreamTotal": 149,
   "upstreamRepos": 4,
@@ -9,7 +9,6 @@
   "candidates": [
     "4kav",
     "7sefun",
-    "age",
     "ai",
     "anime1",
     "apple",
@@ -26,23 +25,24 @@
     "rrmj",
     "wwgz",
     "yhdm",
-    "zxzj",
     "zym"
   ],
   "skippedPlay": [
+    "KoreaPornMovie",
     "EXPORNTOONS",
     "alist_tvbox",
     "alist_xiaoya",
-    "beeg",
     "avtoday",
+    "beeg",
     "hkdoll",
     "hohoj",
     "madou",
+    "missav",
     "naixxzy",
     "pomo",
-    "pornhub",
-    "ppp",
     "pppPorn",
+    "ppp",
+    "pornhub",
     "xhamster",
     "xsjyy"
   ],
@@ -50,7 +50,6 @@
     "anime1",
     "avdb",
     "ppnix",
-    "wwgz",
     "apple",
     "7sefun",
     "kuaikaw",
@@ -62,7 +61,9 @@
     "huya"
   ],
   "added": [],
-  "removed": [],
+  "removed": [
+    "农民影视"
+  ],
   "skipped": [
     "4kav(排除名单)",
     "madou(排除名单)",
@@ -80,20 +81,18 @@
     "douyu",
     "duboku",
     "huangguo",
+    "huya",
     "kuaikaw",
     "ppnix",
-    "rrmj",
-    "zym"
+    "rrmj"
   ],
   "failedStages": {
-    "age": "stream: HTTP 403 ",
     "anime1": "getCards: 列表为空",
     "hdmoli": "getPlayinfo: getPlayinfo 抛异常: ENOTFOUND",
-    "huya": "stream: HTTP 403 ",
     "meijumi": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[]}",
     "pandatv": "getPlayinfo: getPlayinfo 未返回有效地址 / 返回: {\"urls\":[null],\"headers\":[{\"Referer\":\"https://m.pandalive.co.kr/\",\"Origin\":\"https://m.pandalive.co.kr\",\"User-Agent\":\"Mozi",
     "wwgz": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）",
     "yhdm": "stream: HTTP 403 ",
-    "zxzj": "stream: 返回 HTML 而非视频（多为防盗链/需登录/地址失效）"
+    "zym": "stream: HTTP 连接失败 UND_ERR_SOCKET"
   }
 }
